@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Chemistry Notes - Topic 4: Acids and Bases</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+        function toggleLanguage() {
+            var isEng = document.getElementById('lang-toggle').checked;
+            var zhElements = document.querySelectorAll('.zh');
+            var enElements = document.querySelectorAll('.en');
+            zhElements.forEach(el => el.style.display = isEng ? 'none' : 'block');
+            enElements.forEach(el => el.style.display = isEng ? 'block' : 'none');
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 850px; padding: 20px; color: #333; }
+        h1, h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
+        h3 { color: #2c3e50; margin-top: 15px; }
+        .en { display: none; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; color: #0056b3; }
+        .toggle-container { margin-bottom: 20px; padding: 15px; background: #eef5f9; display: inline-block; border-radius: 8px; border: 1px solid #b3d4ec; font-weight: bold; cursor: pointer; }
+        .highlight { font-weight: bold; color: #d9534f; }
+        .equation { background: #f9f9f9; padding: 10px; border-left: 4px solid #0056b3; margin: 10px 0; font-family: monospace; }
+        .comparison-box { background: #f2f9f2; border-left: 5px solid #5cb85c; padding: 12px; margin: 15px 0; }
+    </style>
+</head>
+<body onload="toggleLanguage()">
+    <div class="top-nav">
+        <div class="top-nav-container">
+            <a href="../index.html" class="back-btn">⬅ 返回課題列表</a>
+        </div>
+    </div>
+    <div class="toggle-container">
+        <label for="lang-toggle" style="cursor: pointer;">
+            <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()"> 
+            Switch to English Version (切換至英文版本)
+        </label>
+    </div>
+
+    <div class="zh">
+        <h1>DSE 化學筆記：課題四 酸和鹽基</h1>
+        
+        <h2>1. 酸與鹼基的四大核心反應</h2>
+        <p>不論是強酸還是弱酸，它們在水溶液中都有相似的化學性質：</p>
+        <ul>
+            <li><strong>酸 + 活潑金屬 $\rightarrow$ 鹽 + 氫氣</strong>
+                <div class="equation">$Mg(s) + 2HCl(aq) \rightarrow MgCl_2(aq) + H_2(g)$</div>
+            </li>
+            <li><strong>酸 + 碳酸鹽 / 碳酸氫鹽 $\rightarrow$ 鹽 + 水 + 二氧化碳</strong>
+                <div class="equation">$Na_2CO_3(s) + 2HCl(aq) \rightarrow 2NaCl(aq) + H_2O(l) + CO_2(g)$</div>
+            </li>
+            <li><strong>酸 + 鹽基（中和反應） $\rightarrow$ 鹽 + 水</strong>
+                <div class="equation">$CuO(s) + H_2SO_4(aq) \rightarrow CuSO_4(aq) + H_2O(l)$</div>
+            </li>
+        </ul>
+
+        <h2>2. 核心考點：強酸與弱酸的分辨</h2>
+        <div class="comparison-box">
+            <strong>定義區分：</strong><br>
+            <ul>
+                <li><strong>強酸（如 $HCl$）</strong>：在水中<span class="highlight">完全電離</span>。 $HCl(aq) \rightarrow H^+(aq) + Cl^-(aq)$</li>
+                <li><strong>弱酸（如 $CH_3COOH$）</strong>：在水中<span class="highlight">部分電離</span>，化學反應屬可逆反應。 $CH_3COOH(aq) \rightleftharpoons CH_3COO^-(aq) + H^+(aq)$</li>
+            </ul>
+            <strong>相同摩爾濃度（如 $0.1\,M$）時的物理性質比較：</strong>
+            <table>
+                <tr><th>性質項目</th><th>強酸 ($0.1\,M\,HCl$)</th><th>弱酸 ($0.1\,M\,CH_3COOH$)</th></tr>
+                <tr><td><strong>氫離子濃度 $[H^+]$</strong></td><td>較高 ($0.1\,M$)</td><td>較低（遠小於 $0.1\,M$）</td></tr>
+                <tr><td><strong>pH 值</strong></td><td>較低 (pH = 1)</td><td>較高 (pH $\approx$ 3)</td></tr>
+                <tr><td><strong>導電性</strong></td><td>較強（因自由移動離子濃度較高）</td><td>較弱（因自由移動離子濃度較低）</td></tr>
+                <tr><td><strong>與鎂反應的速率</strong></td><td>較快（氣泡產生劇烈）</td><td>較慢（氣泡產生緩慢）</td></tr>
+            </table>
+        </div>
+
+        <h2>3. 酸鹼滴定與計算基礎</h2>
+        <p>滴定的核心公式： <strong>摩爾數 ($n$) = 摩爾濃度 ($M$) $\times$ 體積 ($V$, 單位必須為 $dm^3$)</strong></p>
+        <p>常用指示劑終點轉色（由酸入鹼）：</p>
+        <ul>
+            <li><strong>酚酞 (Phenolphthalein)</strong>：無色 (Colorless) $\rightarrow$ <span class="highlight">粉紅色 (Pink)</span></li>
+            <li><strong>甲基橙 (Methyl orange)</strong>：紅色 (Red) $\rightarrow$ <span class="highlight">黃色 (Yellow)</span>（終點為橙色）</li>
+        </ul>
+
+        <h2>專業術語中英對照表</h2>
+        <table>
+            <tr><th>英文術語</th><th>中文翻譯</th><th>核心定義解釋</th></tr>
+            <tr><td>Basicity</td><td>元數</td><td>一個酸分子在完全電離時，所能釋放出的 $H^+$ 的最大數目。</td></tr>
+            <tr><td>Standard solution</td><td>標準溶液</td><td>一種已知準確濃度的溶液。</td></tr>
+            <tr><td>Equivalence point</td><td>當量點</td><td>酸與鹼的摩爾比例剛好符合化學方程式理論比例的時刻。</td></tr>
+            <tr><td>End point</td><td>終點</td><td>在滴定實驗中，指示劑剛好發生持久顏色變化的時刻。</td></tr>
+        </table>
+    </div>
+
+    <div class="en">
+        <h1>DSE Chemistry Notes: Topic 4 Acids and Bases</h1>
+        
+        <h2>1. Four Core Reactions of Acids</h2>
+        <p>Both strong and weak acids show similar chemical properties in aqueous solutions:</p>
+        <ul>
+            <li><strong>Acid + Reactive Metal $\rightarrow$ Salt + Hydrogen</strong>
+                <div class="equation">$Mg(s) + 2HCl(aq) \rightarrow MgCl_2(aq) + H_2(g)$</div>
+            </li>
+            <li><strong>Acid + Carbonate / Hydrogencarbonate $\rightarrow$ Salt + Water + Carbon Dioxide</strong>
+                <div class="equation">$Na_2CO_3(s) + 2HCl(aq) \rightarrow 2NaCl(aq) + H_2O(l) + CO_2(g)$</div>
+            </li>
+            <li><strong>Acid + Base (Neutralization) $\rightarrow$ Salt + Water</strong>
+                <div class="equation">$CuO(s) + H_2SO_4(aq) \rightarrow CuSO_4(aq) + H_2O(l)$</div>
+            </li>
+        </ul>
+
+        <h2>2. Examination Hotspot: Strong vs. Weak Acids</h2>
+        <div class="comparison-box">
+            <strong>Definitions:</strong><br>
+            <ul>
+                <li><strong>Strong Acid (e.g., $HCl$)</strong>: <span class="highlight">Completely ionized</span> in water. $HCl(aq) \rightarrow H^+(aq) + Cl^-(aq)$</li>
+                <li><strong>Weak Acid (e.g., $CH_3COOH$)</strong>: <span class="highlight">Partially ionized</span> in water; the reaction is reversible. $CH_3COOH(aq) \rightleftharpoons CH_3COO^-(aq) + H^+(aq)$</li>
+            </ul>
+            <strong>Comparison at the same molarity (e.g., $0.1\,M$):</strong>
+            <table>
+                <tr><th>Property</th><th>Strong Acid ($0.1\,M\,HCl$)</th><th>Weak Acid ($0.1\,M\,CH_3COOH$)</th></tr>
+                <tr><td><strong>Hydrogen ion conc. $[H^+]$</strong></td><td>Higher ($0.1\,M$)</td><td>Lower (much less than $0.1\,M$)</td></tr>
+                <tr><td><strong>pH value</strong></td><td>Lower (pH = 1)</td><td>Higher (pH $\approx$ 3)</td></tr>
+                <tr><td><strong>Electrical Conductivity</strong></td><td>Higher (higher concentration of mobile ions)</td><td>Lower (lower concentration of mobile ions)</td></tr>
+                <tr><td><strong>Reaction rate with Mg</strong></td><td>Faster (vigorous effervescence)</td><td>Slower (mild effervescence)</td></tr>
+            </table>
+        </div>
+
+        <h2>3. Acid-Base Titration & Basic Calculations</h2>
+        <p>Core Formula: <strong>Number of moles ($n$) = Molarity ($M$) $\times$ Volume ($V$ in $dm^3$)</strong></p>
+        <p>Common Indicator Color Changes (from acidic to basic medium):</p>
+        <ul>
+            <li><strong>Phenolphthalein</strong>: Colorless $\rightarrow$ <span class="highlight">Pink</span></li>
+            <li><strong>Methyl orange</strong>: Red $\rightarrow$ <span class="highlight">Yellow</span> (Orange at end point)</li>
+        </ul>
+
+        <h2>Bilingual Glossary</h2>
+        <table>
+            <tr><th>English Term</th><th>Chinese Translation</th><th>Definition</th></tr>
+            <tr><td>Basicity</td><td>元數</td><td>The maximum number of $H^+$ ions that can be produced by one molecule of an acid upon complete ionization.</td></tr>
+            <tr><td>Standard solution</td><td>標準溶液</td><td>A solution of accurately known concentration.</td></tr>
+            <tr><td>Equivalence point</td><td>當量點</td><td>The point at which the amount of acid and base added matches the stoichiometric ratio in the chemical equation.</td></tr>
+            <tr><td>End point</td><td>終點</td><td>The point in a titration where the indicator changes color permanently.</td></tr>
+        </table>
+    </div>
+
+</body>
+</html>

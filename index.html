@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKDSE 化學科自主溫習網站</title>
+    <style>
+        /* 基礎樣式設定 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* 導航欄 Navbar */
+        .navbar {
+            background-color: #005b96;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* 橫幅與介紹 Banner */
+        .hero {
+            background-color: #03396c;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .hero h1 {
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 運作指南卡片 */
+        .guide-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-left: 5px solid #6497b1;
+        }
+        .guide-card h2 {
+            color: #03396c;
+            margin-bottom: 10px;
+        }
+        .guide-card ol {
+            padding-left: 20px;
+        }
+
+        /* 課題列表卡片網格 (響應式設計：電腦3欄、手機1欄) */
+        .section-title {
+            color: #03396c;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #005b96;
+            padding-bottom: 5px;
+        }
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .topic-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid #005b96;
+        }
+        .topic-badge {
+            background-color: #b3cde0;
+            color: #03396c;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            align-self: flex-start;
+            margin-bottom: 10px;
+        }
+        .topic-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #111;
+        }
+        .action-btn {
+            text-align: right;
+            color: #005b96;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* 頁腳 */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        🧪 HKDSE 化學科溫習平台
+    </div>
+
+    <div class="hero">
+        <h1>DSE Chemistry 網上自學精修</h1>
+        <p>不論用電腦還是手機，隨時隨地掌握化學科 Core + Elective 所有核心概念！</p>
+    </div>
+
+    <div class="container">
+        
+        <div class="guide-card">
+            <h2>💡 網站溫習指南</h2>
+            <ol>
+                <li>依序點擊下方卡片，進入各個課題的專屬筆記。</li>
+                <li>每頁筆記頂部皆有快速選單，方便你隨時切換章節。</li>
+                <li>看完筆記後，請務必完成頁面底部的「自我檢測練習」，即時鞏固知識。</li>
+            </ol>
+        </div>
+
+        <h2 class="section-title">📘 課題導航</h2>
+        
+        <div class="topic-grid">
+            
+            <a href="./topics:/topic01_planet_earth.html" class="topic-card">
+                <div>
+                    <span class="topic-badge">Topic 1</span>
+                    <h3>地球 (The Planet Earth)</h3>
+                </div>
+                <div class="action-btn">開始溫習 →</div>
+            </a>
+
+            <a href="./topics:/topic02_microscopic_world_1.html" class="topic-card">
+                <div>
+                    <span class="topic-badge">Topic 2</span>
+                    <h3>微觀世界 I (Microscopic World I)</h3>
+                </div>
+                <div class="action-btn">開始溫習 →</div>
+            </a>
+
+            <a href="./topics:/topic03_metals.html" class="topic-card">
+                <div>
+                    <span class="topic-badge">Topic 3</span>
+                    <h3>金屬 (Metals)</h3>
+                </div>
+                <div class="action-btn">開始溫習 →</div>
+            </a>
+            
+            <a href="./topics:/topic04_acids_and_bases.html" class="topic-card">
+                <div>
+                    <span class="topic-badge">Topic 4</span>
+                    <h3>酸和鹽基 (Acids and Bases)</h3>
+                </div>
+                <div class="action-btn">開始溫習 →</div>
+            </a>
+
+            <a href="./topics:/topic05_fossil_fuels.html" class="topic-card">
+                <div>
+                    <span class="topic-badge">Topic 5</span>
+                    <h3>化石燃料和碳化合物 (Fossil Fuels and Carbon Compounds)</h3>
+                </div>
+                <div class="action-btn">開始溫習 →</div>
+            </a>
+
+            <a href="./topics:/topic06_microscopic_world_2.html" class="topic-card">
+                <div>
+                    <span class="topic-badge">Topic 6</span>
+                    <h3>微觀世界 II (Microscopic World II)</h3>
+                </div>
+                <div class="action-btn">開始溫習 →</div>
+            </a>
+
+            <a href="./topics:/topic07_redox.html" class="topic-card">
+                <div>
+                    <span class="topic-badge">Topic 7</span>
+                    <h3>氧化還原反應、化學電池和電解 (Redox Reactions, Chemical Cells and Electrolysis)</h3>
+                </div>
+                <div class="action-btn">開始溫習 →</div>
+            </a>
+
+            <a href="./topics:/topic08_energy.html" class="topic-card">
+                <div>
+                    <span class="topic-badge">Topic 8</span>
+                    <h3>化學反應和能量 (Chemical Reactions and Energy)</h3>
+                </div>
+                <div class="action-btn">開始溫習 →</div>
+            </a>
+
+            <a href="./topics:/topic09_rate_of_reaction.html" class="topic-card">
+                <div>
+                    <span class="topic-badge">Topic 9</span>
+                    <h3>反應速率 (Rate of Reaction)</h3>
+                </div>
+                <div class="action-btn">開始溫習 →</div>
+            </a>
+
+            <a href="./topics:/topic10_equilibrium.html" class="topic-card">
+                <div>
+                    <span class="topic-badge">Topic 10</span>
+                    <h3>化學平衡 (Chemical Equilibrium)</h3>
+                </div>
+                <div class="action-btn">開始溫習 →</div>
+            </a>
+
+            <a href="./topics:/topic11_carbon_compounds.html" class="topic-card">
+                <div>
+                    <span class="topic-badge">Topic 11</span>
+                    <h3>碳化合物的化學 (Chemistry of Carbon Compounds)</h3>
+                </div>
+                <div class="action-btn">開始溫習 →</div>
+            </a>
+
+            <a href="./topics:/topic12_patterns.html" class="topic-card">
+                <div>
+                    <span class="topic-badge">Topic 12</span>
+                    <h3>化學世界中的規律 (Patterns in the Chemical World)</h3>
+                </div>
+                <div class="action-btn">開始溫習 →</div>
+            </a>
+
+            <a href="./topics:/topic13_industrial_chem.html" class="topic-card">
+                <div>
+                    <span class="topic-badge">Topic 13</span>
+                    <h3>工業化學 (Industrial Chemistry)</h3>
+                </div>
+                <div class="action-btn">開始溫習 →</div>
+            </a>
+
+            <a href="./topics:/topic14_materials_chem.html" class="topic-card">
+                <div>
+                    <span class="topic-badge">Topic 14</span>
+                    <h3>物料化學 (Materials Chemistry)</h3>
+                </div>
+                <div class="action-btn">開始溫習 →</div>
+            </a>
+
+            <a href="./topics:/topic15_analytical_chem.html" class="topic-card">
+                <div>
+                    <span class="topic-badge">Topic 15</span>
+                    <h3>分析化學 (Analytical Chemistry)</h3>
+                </div>
+                <div class="action-btn">開始溫習 →</div>
+            </a>
+            </div>
+    </div>
+
+    <footer>
+        <p>© 2026 HKDSE 化學科自主溫習網站. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

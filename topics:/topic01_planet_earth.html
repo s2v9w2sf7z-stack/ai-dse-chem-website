@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Chemistry Notes - Topic 1: Planet Earth</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+        // 語言切換功能
+        function toggleLanguage() {
+            var isEng = document.getElementById('lang-toggle').checked;
+            var zhElements = document.querySelectorAll('.zh');
+            var enElements = document.querySelectorAll('.en');
+            zhElements.forEach(el => el.style.display = isEng ? 'none' : 'block');
+            enElements.forEach(el => el.style.display = isEng ? 'block' : 'none');
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 800px; padding: 20px; color: #333; }
+        h1, h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
+        .en { display: none; } /* 預設顯示中文 */
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; color: #0056b3; }
+        .toggle-container { margin-bottom: 20px; padding: 15px; background: #eef5f9; display: inline-block; border-radius: 8px; border: 1px solid #b3d4ec; font-weight: bold; }
+        .equation { background: #f9f9f9; padding: 10px; border-left: 4px solid #0056b3; margin: 10px 0; font-family: monospace; }
+        .highlight { font-weight: bold; color: #d9534f; }
+    </style>
+</head>
+<body onload="toggleLanguage()">
+    <div class="top-nav">
+        <div class="top-nav-container">
+            <a href="../index.html" class="back-btn">⬅ 返回課題列表</a>
+        </div>
+    </div>
+    <div class="toggle-container">
+        <label for="lang-toggle">
+            <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()"> 
+            Switch to English Version (切換至英文版本)
+        </label>
+    </div>
+
+    <div class="zh">
+        <h1>DSE 化學筆記：課題一 地球</h1>
+        
+        <h2>核心概念摘要</h2>
+        <ul>
+            <li><strong>大氣</strong>：空氣是混合物。工業上透過<span class="highlight">液態空氣的分餾</span>提取氮氣和氧氣，依賴沸點差異分離。</li>
+            <li><strong>海洋</strong>：海水含有大量溶解鹽。
+                <ul>
+                    <li>測試鈉離子 ($Na^+$)：進行<span class="highlight">焰色試驗</span>，呈現<span class="highlight">金黃色</span>火焰。</li>
+                    <li>測試氯離子 ($Cl^-$)：加入稀硝酸及硝酸銀溶液，產生<span class="highlight">白色沉澱物</span>。
+                        <div class="equation">$Ag^+(aq) + Cl^-(aq) \rightarrow AgCl(s)$</div>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>岩石與礦物</strong>：石灰石主要成分為<span class="highlight">碳酸鈣 ($CaCO_3$)</span>。
+                <ul>
+                    <li>受熱分解：<div class="equation">$CaCO_3(s) \rightarrow CaO(s) + CO_2(g)$</div></li>
+                    <li>與稀酸反應：<div class="equation">$CaCO_3(s) + 2HCl(aq) \rightarrow CaCl_2(aq) + H_2O(l) + CO_2(g)$</div></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>專業術語中英對照表</h2>
+        <table>
+            <tr><th>英文術語</th><th>中文翻譯</th><th>核心定義解釋</th></tr>
+            <tr><td>Fractional distillation</td><td>分餾</td><td>利用沸點的差異，將液體混合物分離的物理過程。</td></tr>
+            <tr><td>Flame test</td><td>焰色試驗</td><td>透過觀察金屬離子在火焰中燃燒時發出的特定顏色來鑑定元素。</td></tr>
+            <tr><td>Precipitate</td><td>沉澱物</td><td>在水溶液中發生化學反應後，所形成的不溶於水的固體。</td></tr>
+            <tr><td>Thermal decomposition</td><td>熱分解</td><td>化合物受熱後分解成較簡單物質的化學反應。</td></tr>
+        </table>
+    </div>
+
+    <div class="en">
+        <h1>DSE Chemistry Notes: Topic 1 Planet Earth</h1>
+        
+        <h2>Core Concepts Summary</h2>
+        <ul>
+            <li><strong>The Atmosphere</strong>: Air is a mixture. Nitrogen and oxygen are extracted industrially by the <span class="highlight">fractional distillation of liquid air</span>, based on differences in boiling points.</li>
+            <li><strong>The Ocean</strong>: Sea water contains abundant dissolved salts.
+                <ul>
+                    <li>Test for Sodium ion ($Na^+$): Perform a <span class="highlight">flame test</span>, showing a <span class="highlight">golden yellow</span> flame.</li>
+                    <li>Test for Chloride ion ($Cl^-$): Add dilute nitric acid and silver nitrate solution, forming a <span class="highlight">white precipitate</span>.
+                        <div class="equation">$Ag^+(aq) + Cl^-(aq) \rightarrow AgCl(s)$</div>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Rocks and Minerals</strong>: The main component of limestone is <span class="highlight">calcium carbonate ($CaCO_3$)</span>.
+                <ul>
+                    <li>Thermal decomposition:<div class="equation">$CaCO_3(s) \rightarrow CaO(s) + CO_2(g)$</div></li>
+                    <li>Reaction with dilute acids:<div class="equation">$CaCO_3(s) + 2HCl(aq) \rightarrow CaCl_2(aq) + H_2O(l) + CO_2(g)$</div></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Bilingual Glossary</h2>
+        <table>
+            <tr><th>English Term</th><th>Chinese Translation</th><th>Definition</th></tr>
+            <tr><td>Fractional distillation</td><td>分餾</td><td>A physical process to separate a liquid mixture into its fractions based on boiling point differences.</td></tr>
+            <tr><td>Flame test</td><td>焰色試驗</td><td>An analytical test used to identify elements by the characteristic color they emit in a flame.</td></tr>
+            <tr><td>Precipitate</td><td>沉澱物</td><td>An insoluble solid that emerges from a liquid solution during a chemical reaction.</td></tr>
+            <tr><td>Thermal decomposition</td><td>熱分解</td><td>A chemical reaction where a single substance breaks down into simpler substances upon heating.</td></tr>
+        </table>
+    </div>
+
+</body>
+</html>

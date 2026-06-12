@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Chemistry Notes - Topic 13: Industrial Chemistry</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+        function toggleLanguage() {
+            var isEng = document.getElementById('lang-toggle').checked;
+            var zhElements = document.querySelectorAll('.zh');
+            var enElements = document.querySelectorAll('.en');
+            zhElements.forEach(el => el.style.display = isEng ? 'none' : 'block');
+            enElements.forEach(el => el.style.display = isEng ? 'block' : 'none');
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 880px; padding: 20px; color: #333; }
+        h1, h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
+        h3 { color: #2c3e50; margin-top: 15px; }
+        .en { display: none; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; color: #0056b3; }
+        .toggle-container { margin-bottom: 20px; padding: 15px; background: #eef5f9; display: inline-block; border-radius: 8px; border: 1px solid #b3d4ec; font-weight: bold; cursor: pointer; }
+        .highlight { font-weight: bold; color: #d9534f; }
+        .equation { background: #f9f9f9; padding: 15px; border-left: 4px solid #0056b3; margin: 10px 0; font-family: monospace; font-size: 1.1em; overflow-x: auto; text-align: center; }
+        .concept-box { background: #e8f4f8; border-left: 5px solid #5bc0de; padding: 12px; margin: 15px 0; }
+        .alert-box { background: #feebeb; border-left: 5px solid #d9534f; padding: 12px; margin: 15px 0; }
+    </style>
+</head>
+<body onload="toggleLanguage()">
+    <div class="top-nav">
+        <div class="top-nav-container">
+            <a href="../index.html" class="back-btn">⬅ 返回課題列表</a>
+        </div>
+    </div>
+    <div class="toggle-container">
+        <label for="lang-toggle" style="cursor: pointer;">
+            <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()"> 
+            Switch to English Version (切換至英文版本)
+        </label>
+    </div>
+
+    <div class="zh">
+        <h1>DSE 化學筆記：課題十三 工業化學</h1>
+        
+        <h2>1. 速率方程 (Rate Equation)</h2>
+        <p>對於反應 $A + B \rightarrow C$，速率方程表示為：</p>
+        <div class="equation">$$\text{Rate} = k[A]^m[B]^n$$</div>
+        <div class="concept-box">
+            <ul>
+                <li><strong>$k$ (速率常數)</strong>：只隨<span class="highlight">溫度</span>及<span class="highlight">催化劑</span>改變。必須小心推算其單位。</li>
+                <li><strong>$m$ 和 $n$ (反應級數)</strong>：常見為 0、1 或 2。<span class="highlight">零級反應</span>表示改變該物質濃度不會影響反應速率。</li>
+            </ul>
+        </div>
+
+        <h2>2. 阿倫尼烏斯方程與活化能 ($E_a$)</h2>
+        <div class="equation">$$\ln k = \text{常數} - \frac{E_a}{R} \left(\frac{1}{T}\right)$$</div>
+        <div class="alert-box">
+            <strong>DSE 圖表計算陷阱：</strong><br>
+            考評局常要求學生繪畫 $\ln k$ 對 $1/T$ 的圖表。斜率公式為：<strong>$m = -E_a / R$</strong>。<br>
+            計算出的 $E_a$ 單位原本是 $J \, mol^{-1}$，作答時記得<span class="highlight">除以 1000 轉換為 $kJ \, mol^{-1}$</span>！溫度 $T$ 必須使用絕對溫度 ($K = ^\circ C + 273$)。
+        </div>
+
+        <h2>3. 氯鹼工業：離子透析膜電解池</h2>
+        <p>電解飽和食鹽水以產生三種重要的化工原料：</p>
+        <ul>
+            <li>陽極 (Anode) 反應：$2Cl^-(aq) \rightarrow Cl_2(g) + 2e^-$</li>
+            <li>陰極 (Cathode) 反應：$2H_2O(l) + 2e^- \rightarrow H_2(g) + 2OH^-(aq)$</li>
+        </ul>
+        <p><strong>陽離子透析膜的兩大功用：</strong><br>
+        1. 只允許 $Na^+$ 通過以平衡電荷。<br>
+        2. <span class="highlight">阻止氯氣 ($Cl_2$) 與氫氧化鈉 ($NaOH$) 混合</span>並發生副反應，確保產物的高純度。</p>
+
+        <h2>4. 綠色化學 (Green Chemistry)</h2>
+        <p>原子經濟 (Atom economy) 是衡量工業合成路線優劣的重要指標：</p>
+        <div class="equation">$$\text{原子經濟} = \frac{\text{目標產物的摩爾質量}}{\text{反應物的總摩爾質量}} \times 100\%$$</div>
+        <p>提升原子經濟的方法包括：選擇<span class="highlight">加成反應</span>（Atom economy = 100%）、使用可再生資源及研發更高效的催化劑。</p>
+
+        <h2>專業術語中英對照表</h2>
+        <table>
+            <tr><th>英文術語</th><th>中文翻譯</th><th>核心定義解釋</th></tr>
+            <tr><td>Rate constant ($k$)</td><td>速率常數</td><td>速率方程中的常數，只隨溫度和催化劑而改變。</td></tr>
+            <tr><td>Order of reaction</td><td>反應級數</td><td>速率方程中濃度項的次方數，必須透過實驗確定。</td></tr>
+            <tr><td>Arrhenius equation</td><td>阿倫尼烏斯方程</td><td>顯示速率常數與溫度及活化能之間數學關係的方程。</td></tr>
+            <tr><td>Membrane cell</td><td>離子透析膜電解池</td><td>利用半透膜阻止產物混合的現代氯鹼電解裝置。</td></tr>
+            <tr><td>Atom economy</td><td>原子經濟</td><td>量度有多少比例的反應物原子最終轉化為目標產物的指標。</td></tr>
+        </table>
+    </div>
+
+    <div class="en">
+        <h1>DSE Chemistry Notes: Topic 13 Industrial Chemistry</h1>
+        
+        <h2>1. Rate Equation</h2>
+        <p>For a reaction $A + B \rightarrow C$, the rate equation is expressed as:</p>
+        <div class="equation">$$\text{Rate} = k[A]^m[B]^n$$</div>
+        <div class="concept-box">
+            <ul>
+                <li><strong>$k$ (Rate constant)</strong>: Changes ONLY with <span class="highlight">temperature</span> and <span class="highlight">catalyst</span>. Be careful when deriving its units.</li>
+                <li><strong>$m$ and $n$ (Orders of reaction)</strong>: Commonly 0, 1, or 2. A <span class="highlight">zero-order</span> reaction means changing that reactant's concentration has no effect on the rate.</li>
+            </ul>
+        </div>
+
+        <h2>2. Arrhenius Equation and Activation Energy ($E_a$)</h2>
+        <div class="equation">$$\ln k = \text{Constant} - \frac{E_a}{R} \left(\frac{1}{T}\right)$$</div>
+        <div class="alert-box">
+            <strong>DSE Graph Calculation Traps:</strong><br>
+            HKEAA often asks students to plot $\ln k$ against $1/T$. The slope is: <strong>$m = -E_a / R$</strong>.<br>
+            The calculated $E_a$ is initially in $J \, mol^{-1}$. Remember to <span class="highlight">divide by 1000 to convert to $kJ \, mol^{-1}$</span>! Temperature $T$ must be in Kelvin ($K = ^\circ C + 273$).
+        </div>
+
+        <h2>3. Chlor-alkali Industry: Membrane Cell</h2>
+        <p>Electrolysis of saturated brine to produce three important industrial feedstocks:</p>
+        <ul>
+            <li>Anode reaction: $2Cl^-(aq) \rightarrow Cl_2(g) + 2e^-$</li>
+            <li>Cathode reaction: $2H_2O(l) + 2e^- \rightarrow H_2(g) + 2OH^-(aq)$</li>
+        </ul>
+        <p><strong>Two main functions of the Cation-permeable membrane:</strong><br>
+        1. Allows only $Na^+$ to pass through to balance the charge.<br>
+        2. <span class="highlight">Prevents mixing of chlorine ($Cl_2$) and sodium hydroxide ($NaOH$)</span> to avoid side reactions, ensuring high purity of products.</p>
+
+        <h2>4. Green Chemistry</h2>
+        <p>Atom economy is a crucial metric for evaluating the efficiency of a synthetic route:</p>
+        <div class="equation">$$\text{Atom Economy} = \frac{\text{Molar mass of desired product}}{\text{Total molar mass of reactants}} \times 100\%$$</div>
+        <p>Ways to improve atom economy include selecting <span class="highlight">addition reactions</span> (Atom economy = 100%), using renewable resources, and developing more efficient catalysts.</p>
+
+        <h2>Bilingual Glossary</h2>
+        <table>
+            <tr><th>English Term</th><th>Chinese Translation</th><th>Definition</th></tr>
+            <tr><td>Rate constant ($k$)</td><td>速率常數</td><td>A constant in the rate equation, varying only with temperature and catalyst.</td></tr>
+            <tr><td>Order of reaction</td><td>反應級數</td><td>The power to which the concentration of a reactant is raised in the rate equation.</td></tr>
+            <tr><td>Arrhenius equation</td><td>阿倫尼烏斯方程</td><td>An equation showing the relationship between rate constant, temperature, and activation energy.</td></tr>
+            <tr><td>Membrane cell</td><td>離子透析膜電解池</td><td>An electrolytic cell using a membrane to prevent mixing of products in the chlor-alkali process.</td></tr>
+            <tr><td>Atom economy</td><td>原子經濟</td><td>A measure of the proportion of reactant atoms that become part of the desired product.</td></tr>
+        </table>
+    </div>
+
+</body>
+</html>

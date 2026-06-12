@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Chemistry Notes - Topic 9: Rate of Reaction</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+        function toggleLanguage() {
+            var isEng = document.getElementById('lang-toggle').checked;
+            var zhElements = document.querySelectorAll('.zh');
+            var enElements = document.querySelectorAll('.en');
+            zhElements.forEach(el => el.style.display = isEng ? 'none' : 'block');
+            enElements.forEach(el => el.style.display = isEng ? 'block' : 'none');
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 850px; padding: 20px; color: #333; }
+        h1, h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
+        h3 { color: #2c3e50; margin-top: 15px; }
+        .en { display: none; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; color: #0056b3; }
+        .toggle-container { margin-bottom: 20px; padding: 15px; background: #eef5f9; display: inline-block; border-radius: 8px; border: 1px solid #b3d4ec; font-weight: bold; cursor: pointer; }
+        .highlight { font-weight: bold; color: #d9534f; }
+        .equation { background: #f9f9f9; padding: 10px; border-left: 4px solid #0056b3; margin: 10px 0; font-family: monospace; font-size: 1.1em; }
+        .concept-box { background: #fdf5e6; border-left: 5px solid #f0ad4e; padding: 12px; margin: 15px 0; }
+        .warning-box { background: #feebeb; border-left: 5px solid #d9534f; padding: 12px; margin: 15px 0; }
+    </style>
+</head>
+<body onload="toggleLanguage()">
+    <div class="top-nav">
+        <div class="top-nav-container">
+            <a href="../index.html" class="back-btn">⬅ 返回課題列表</a>
+        </div>
+    </div>
+    <div class="toggle-container">
+        <label for="lang-toggle" style="cursor: pointer;">
+            <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()"> 
+            Switch to English Version (切換至英文版本)
+        </label>
+    </div>
+
+    <div class="zh">
+        <h1>DSE 化學筆記：課題九 反應速率</h1>
+        
+        <h2>1. 反應速率的量度方法</h2>
+        <p>選擇量度方法取決於反應物及生成物的物理狀態：</p>
+        <ul>
+            <li><strong>量度氣體體積 (Volume of gas)</strong>：使用氣筒收集。適合產生不溶於水或微溶於水氣體的反應（如 $H_2, CO_2$）。</li>
+            <li><strong>量度質量減少 (Mass loss)</strong>：將燒杯放在電子磅上。適合產生高密度氣體（如 $CO_2$）的反應。<span class="highlight">不適用於產生 $H_2$ 的反應</span>，因為 $H_2$ 太輕，質量變化不明顯。</li>
+            <li><strong>量度透光度/沉澱物 (Disappearing cross)</strong>：如硫代硫酸鈉與稀酸反應產生黃色硫沉澱 ($S$)。<br>
+                <div class="equation">$S_2O_3^{2-}(aq) + 2H^+(aq) \rightarrow S(s) + SO_2(g) + H_2O(l)$</div>
+            </li>
+        </ul>
+
+        <h2>2. 碰撞理論 (Collision Theory) 滿分解釋框架</h2>
+        <div class="concept-box">
+            <strong>解釋為何反應速率隨時間減慢：</strong><br>
+            隨着反應進行，反應物的<span class="highlight">濃度下降</span> $\rightarrow$ 單位體積內的粒子數目減少 $\rightarrow$ 粒子的<span class="highlight">碰撞頻率下降</span> $\rightarrow$ <span class="highlight">有效碰撞頻率下降</span> $\rightarrow$ 速率減慢。
+        </div>
+
+        <h2>3. 影響反應速率的關鍵因素</h2>
+        <table>
+            <tr><th>因素</th><th>微觀解釋 (根據碰撞理論)</th></tr>
+            <tr><td><strong>濃度 (Concentration)</strong></td><td>單位體積內的反應物粒子數量增加，導致<strong>碰撞頻率增加</strong>。</td></tr>
+            <tr><td><strong>固體表面積 (Surface Area)</strong></td><td>粉末提供更大的表面積，暴露更多粒子，導致<strong>碰撞頻率增加</strong>。</td></tr>
+            <tr><td><strong>溫度 (Temperature)</strong></td><td>粒子平均動能增加。<span class="highlight">具有大於或等於活化能 ($E_a$) 的粒子數目顯著增加</span>，導致<strong>有效碰撞頻率增加</strong>。</td></tr>
+            <tr><td><strong>催化劑 (Catalyst)</strong></td><td>提供一條<span class="highlight">活化能 ($E_a$) 較低</span>的另一反應途徑。更多粒子能跨越此能量門檻，導致<strong>有效碰撞頻率增加</strong>。</td></tr>
+        </table>
+        
+        <div class="warning-box">
+            <strong>考試陷阱 (DSE Trap)：</strong><br>
+            加入催化劑 <strong>不會</strong> 改變反應物和生成物的焓 ($\Delta H$)，也 <strong>不會</strong> 增加生成物的總產量 (Yield)。它只能讓你<strong>更快</strong>得到相同數量的生成物。
+        </div>
+
+        <h2>專業術語中英對照表</h2>
+        <table>
+            <tr><th>英文術語</th><th>中文翻譯</th><th>核心定義解釋</th></tr>
+            <tr><td>Activation energy ($E_a$)</td><td>活化能</td><td>引發化學反應所需的最低能量。</td></tr>
+            <tr><td>Effective collision</td><td>有效碰撞</td><td>能量足夠且方向正確，能成功引發反應的碰撞。</td></tr>
+            <tr><td>Catalyst</td><td>催化劑</td><td>加快反應速率，但自身化學性質及質量在反應後保持不變的物質。</td></tr>
+            <tr><td>Instantaneous rate</td><td>瞬時速率</td><td>反應在某一特定時刻的速率（圖表切線斜率）。</td></tr>
+            <tr><td>Alternative pathway</td><td>另一反應途徑</td><td>催化劑為反應提供的一條較低活化能的反應路徑。</td></tr>
+        </table>
+    </div>
+
+    <div class="en">
+        <h1>DSE Chemistry Notes: Topic 9 Rate of Reaction</h1>
+        
+        <h2>1. Methods of Measuring Reaction Rate</h2>
+        <p>The choice of method depends on the physical states of reactants and products:</p>
+        <ul>
+            <li><strong>Volume of gas</strong>: Using a gas syringe. Suitable for reactions producing gases (e.g., $H_2, CO_2$).</li>
+            <li><strong>Mass loss</strong>: Using an electronic balance. Suitable for reactions producing heavy gases (e.g., $CO_2$). <span class="highlight">Not suitable for $H_2$</span> because it is too light to show a significant mass change.</li>
+            <li><strong>Turbidity / Disappearing cross</strong>: e.g., reaction between sodium thiosulphate and dilute acid producing yellow sulphur precipitate ($S$).<br>
+                <div class="equation">$S_2O_3^{2-}(aq) + 2H^+(aq) \rightarrow S(s) + SO_2(g) + H_2O(l)$</div>
+            </li>
+        </ul>
+
+        <h2>2. Collision Theory: Perfect Answering Framework</h2>
+        <div class="concept-box">
+            <strong>Explaining why rate decreases over time:</strong><br>
+            As the reaction proceeds, the <span class="highlight">concentration of reactants decreases</span> $\rightarrow$ Number of particles per unit volume decreases $\rightarrow$ <span class="highlight">Collision frequency decreases</span> $\rightarrow$ <span class="highlight">Effective collision frequency decreases</span> $\rightarrow$ Rate decreases.
+        </div>
+
+        <h2>3. Key Factors Affecting Rate</h2>
+        <table>
+            <tr><th>Factor</th><th>Microscopic Explanation (Collision Theory)</th></tr>
+            <tr><td><strong>Concentration</strong></td><td>More reactant particles per unit volume, leading to an <strong>increase in collision frequency</strong>.</td></tr>
+            <tr><td><strong>Surface Area (Solid)</strong></td><td>Powder provides a larger surface area, exposing more particles, leading to an <strong>increase in collision frequency</strong>.</td></tr>
+            <tr><td><strong>Temperature</strong></td><td>Average kinetic energy of particles increases. <span class="highlight">A larger fraction of particles possess energy $\ge$ activation energy ($E_a$)</span>, leading to a significant <strong>increase in effective collision frequency</strong>.</td></tr>
+            <tr><td><strong>Catalyst</strong></td><td>Provides an <span class="highlight">alternative reaction pathway with a lower activation energy ($E_a$)</span>. More particles can overcome this energy barrier, leading to an <strong>increase in effective collision frequency</strong>.</td></tr>
+        </table>
+        
+        <div class="warning-box">
+            <strong>DSE Trap:</strong><br>
+            Adding a catalyst <strong>DOES NOT</strong> change the enthalpy ($\Delta H$) of reactants/products, and it <strong>DOES NOT</strong> increase the total yield of products. It only allows you to obtain the same amount of product <strong>faster</strong>.
+        </div>
+
+        <h2>Bilingual Glossary</h2>
+        <table>
+            <tr><th>English Term</th><th>Chinese Translation</th><th>Definition</th></tr>
+            <tr><td>Activation energy ($E_a$)</td><td>活化能</td><td>The minimum energy required to start a chemical reaction.</td></tr>
+            <tr><td>Effective collision</td><td>有效碰撞</td><td>A collision with energy $\ge E_a$ and correct orientation that results in a reaction.</td></tr>
+            <tr><td>Catalyst</td><td>催化劑</td><td>A substance that speeds up a reaction but remains chemically unchanged at the end.</td></tr>
+            <tr><td>Instantaneous rate</td><td>瞬時速率</td><td>The rate at a specific moment in time (slope of a tangent on a graph).</td></tr>
+            <tr><td>Alternative pathway</td><td>另一反應途徑</td><td>A new reaction route with a lower $E_a$ provided by a catalyst.</td></tr>
+        </table>
+    </div>
+
+</body>
+</html>

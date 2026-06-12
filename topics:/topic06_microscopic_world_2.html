@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Chemistry Notes - Topic 6: Microscopic World II</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+        function toggleLanguage() {
+            var isEng = document.getElementById('lang-toggle').checked;
+            var zhElements = document.querySelectorAll('.zh');
+            var enElements = document.querySelectorAll('.en');
+            zhElements.forEach(el => el.style.display = isEng ? 'none' : 'block');
+            enElements.forEach(el => el.style.display = isEng ? 'block' : 'none');
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 850px; padding: 20px; color: #333; }
+        h1, h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
+        h3 { color: #2c3e50; margin-top: 15px; }
+        .en { display: none; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; color: #0056b3; }
+        .toggle-container { margin-bottom: 20px; padding: 15px; background: #eef5f9; display: inline-block; border-radius: 8px; border: 1px solid #b3d4ec; font-weight: bold; cursor: pointer; }
+        .highlight { font-weight: bold; color: #d9534f; }
+        .concept-box { background: #e8f4f8; border-left: 5px solid #5bc0de; padding: 12px; margin: 15px 0; }
+    </style>
+</head>
+<body onload="toggleLanguage()">
+    <div class="top-nav">
+        <div class="top-nav-container">
+            <a href="../index.html" class="back-btn">⬅ 返回課題列表</a>
+        </div>
+    </div>
+    <div class="toggle-container">
+        <label for="lang-toggle" style="cursor: pointer;">
+            <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()"> 
+            Switch to English Version (切換至英文版本)
+        </label>
+    </div>
+
+    <div class="zh">
+        <h1>DSE 化學筆記：課題六 微觀世界 II</h1>
+        
+        <h2>1. VSEPR 理論與分子形狀</h2>
+        <p>中心原子的電子對（包括鍵合電子對和<span class="highlight">孤電子對</span>）會互相排斥，並傾向相距最遠。孤電子對的排斥力最強，會「擠壓」鍵角。</p>
+        <table>
+            <tr><th>分子例子</th><th>中心原子鍵合電子對</th><th>孤電子對</th><th>立體形狀 (Shape)</th><th>鍵角</th></tr>
+            <tr><td>甲烷 ($CH_4$)</td><td>4</td><td>0</td><td><strong>四面體 (Tetrahedral)</strong></td><td>109.5°</td></tr>
+            <tr><td>氨 ($NH_3$)</td><td>3</td><td>1</td><td><strong>三角錐體 (Trigonal pyramidal)</strong></td><td>107°</td></tr>
+            <tr><td>水 ($H_2O$)</td><td>2</td><td>2</td><td><strong>V-形 (V-shaped)</strong></td><td>104.5°</td></tr>
+            <tr><td>二氧化碳 ($CO_2$)</td><td>2 (雙鍵視為一對)</td><td>0</td><td><strong>直線形 (Linear)</strong></td><td>180°</td></tr>
+        </table>
+
+        <h2>2. 極性 (Polarity)</h2>
+        <div class="concept-box">
+            <strong>分子極性的判斷兩步曲：</strong><br>
+            1. 分子內是否有<strong>極性鍵</strong>？（視乎兩原子的<span class="highlight">電負性</span>差異）。<br>
+            2. 分子的立體形狀是否<strong>對稱</strong>？若對稱（如 $CCl_4$, $CO_2$），各極性鍵的<span class="highlight">偶極矩會互相抵消</span>，整個分子屬於<strong>非極性 (Non-polar)</strong>。若不對稱（如 $H_2O$, $NH_3$, $CHCl_3$），偶極矩無法抵消，分子屬於<strong>極性 (Polar)</strong>。
+        </div>
+
+        <h2>3. 分子間引力與物理性質</h2>
+        <ul>
+            <li><strong>范德華力 (Van der Waals' forces)</strong>：所有分子間都有。分子體積越大（電子越多），范德華力越強。</li>
+            <li><strong>氫鍵 (Hydrogen bond)</strong>：當氫原子與電負性極高的 <strong>$F$、$O$ 或 $N$</strong> 原子鍵合時產生。含有氫鍵的物質（如水、醇類）具有異常高的沸點。</li>
+            <li><strong>冰的密度</strong>：水結冰時，分子透過氫鍵形成<span class="highlight">開放式六角形結構</span>，分子間留下大量空隙，導致體積膨脹，密度小於液態水。</li>
+        </ul>
+
+        <h2>專業術語中英對照表</h2>
+        <table>
+            <tr><th>英文術語</th><th>中文翻譯</th><th>核心定義解釋</th></tr>
+            <tr><td>Electronegativity</td><td>電負性</td><td>原子在共價鍵中吸引共用電子對的能力。</td></tr>
+            <tr><td>Lone pair</td><td>孤電子對</td><td>沒有參與形成共價鍵的價電子對。</td></tr>
+            <tr><td>VSEPR theory</td><td>價層電子對互斥理論</td><td>透過假設電子對互相排斥以達致最遠距離來預測分子形狀的理論。</td></tr>
+            <tr><td>Dipole moment</td><td>偶極矩</td><td>描述化學鍵極性大小的量；對稱分子中極性鍵的偶極矩可互相抵消。</td></tr>
+            <tr><td>Hydrogen bond</td><td>氫鍵</td><td>含有與 F、O 或 N 共價鍵合的氫原子的分子間的強烈分子間引力。</td></tr>
+        </table>
+    </div>
+
+    <div class="en">
+        <h1>DSE Chemistry Notes: Topic 6 Microscopic World II</h1>
+        
+        <h2>1. VSEPR Theory and Molecular Shapes</h2>
+        <p>Electron pairs (both bond pairs and <span class="highlight">lone pairs</span>) around a central atom repel each other and tend to stay as far apart as possible. Lone pairs exert greater repulsion and "squeeze" the bond angles.</p>
+        <table>
+            <tr><th>Molecule Example</th><th>Bond Pairs on Central Atom</th><th>Lone Pairs</th><th>Shape</th><th>Bond Angle</th></tr>
+            <tr><td>Methane ($CH_4$)</td><td>4</td><td>0</td><td><strong>Tetrahedral</strong></td><td>109.5°</td></tr>
+            <tr><td>Ammonia ($NH_3$)</td><td>3</td><td>1</td><td><strong>Trigonal pyramidal</strong></td><td>107°</td></tr>
+            <tr><td>Water ($H_2O$)</td><td>2</td><td>2</td><td><strong>V-shaped / Bent</strong></td><td>104.5°</td></tr>
+            <tr><td>Carbon dioxide ($CO_2$)</td><td>2 (treat double bond as 1 unit)</td><td>0</td><td><strong>Linear</strong></td><td>180°</td></tr>
+        </table>
+
+        <h2>2. Polarity</h2>
+        <div class="concept-box">
+            <strong>Two Steps to Determine Molecular Polarity:</strong><br>
+            1. Are there <strong>polar bonds</strong>? (Depends on the difference in <span class="highlight">electronegativity</span>).<br>
+            2. Is the molecular shape <strong>symmetrical</strong>? If symmetrical (e.g., $CCl_4$, $CO_2$), the <span class="highlight">dipole moments of polar bonds cancel out each other</span>, making the molecule <strong>non-polar</strong>. If asymmetrical (e.g., $H_2O$, $NH_3$, $CHCl_3$), they do not cancel, and the molecule is <strong>polar</strong>.
+        </div>
+
+        <h2>3. Intermolecular Forces and Physical Properties</h2>
+        <ul>
+            <li><strong>Van der Waals' forces</strong>: Exist between all molecules. The larger the molecular size (more electrons), the stronger the forces.</li>
+            <li><strong>Hydrogen bonds</strong>: Form when a hydrogen atom is bonded to a highly electronegative atom (<strong>$F$, $O$, or $N$</strong>). Substances with hydrogen bonding (e.g., water, alcohols) have exceptionally high boiling points.</li>
+            <li><strong>Density of Ice</strong>: When water freezes, molecules form an <span class="highlight">open hexagonal structure</span> held by hydrogen bonds. The large empty spaces increase volume, making ice less dense than liquid water.</li>
+        </ul>
+
+        <h2>Bilingual Glossary</h2>
+        <table>
+            <tr><th>English Term</th><th>Chinese Translation</th><th>Definition</th></tr>
+            <tr><td>Electronegativity</td><td>電負性</td><td>The ability of an atom to attract shared electron pairs in a covalent bond.</td></tr>
+            <tr><td>Lone pair</td><td>孤電子對</td><td>A pair of valence electrons that are not involved in covalent bond formation.</td></tr>
+            <tr><td>VSEPR theory</td><td>價層電子對互斥理論</td><td>A theory predicting molecular shapes based on the assumption that electron pairs repel each other to attain maximum distance.</td></tr>
+            <tr><td>Dipole moment</td><td>偶極矩</td><td>A measure of the polarity of a bond; in symmetrical molecules, dipole moments can cancel out.</td></tr>
+            <tr><td>Hydrogen bond</td><td>氫鍵</td><td>A strong intermolecular force in molecules containing hydrogen covalently bonded to F, O, or N.</td></tr>
+        </table>
+    </div>
+
+</body>
+</html>

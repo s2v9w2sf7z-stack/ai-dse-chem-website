@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Chemistry Notes - Topic 15: Analytical Chemistry</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+        function toggleLanguage() {
+            var isEng = document.getElementById('lang-toggle').checked;
+            var zhElements = document.querySelectorAll('.zh');
+            var enElements = document.querySelectorAll('.en');
+            zhElements.forEach(el => el.style.display = isEng ? 'none' : 'block');
+            enElements.forEach(el => el.style.display = isEng ? 'block' : 'none');
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 880px; padding: 20px; color: #333; }
+        h1, h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
+        h3 { color: #2c3e50; margin-top: 15px; }
+        .en { display: none; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; color: #0056b3; }
+        .toggle-container { margin-bottom: 20px; padding: 15px; background: #eef5f9; display: inline-block; border-radius: 8px; border: 1px solid #b3d4ec; font-weight: bold; cursor: pointer; }
+        .highlight { font-weight: bold; color: #d9534f; }
+        .equation { background: #f9f9f9; padding: 15px; border-left: 4px solid #0056b3; margin: 10px 0; font-family: monospace; font-size: 1.1em; overflow-x: auto; text-align: center; }
+        .concept-box { background: #e8f4f8; border-left: 5px solid #5bc0de; padding: 12px; margin: 15px 0; }
+        .alert-box { background: #feebeb; border-left: 5px solid #d9534f; padding: 12px; margin: 15px 0; }
+    </style>
+</head>
+<body onload="toggleLanguage()">
+    <div class="top-nav">
+        <div class="top-nav-container">
+            <a href="../index.html" class="back-btn">⬅ 返回課題列表</a>
+        </div>
+    </div>
+    <div class="toggle-container">
+        <label for="lang-toggle" style="cursor: pointer;">
+            <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()"> 
+            Switch to English Version (切換至英文版本)
+        </label>
+    </div>
+
+    <div class="zh">
+        <h1>DSE 化學筆記：課題十五 分析化學</h1>
+        
+        <h2>1. 氧化還原滴定 (Redox Titrations)</h2>
+        <p><strong>碘-硫代硫酸鹽滴定 ($I_2 / S_2O_3^{2-}$)</strong>：這是 DSE 最常考的滴定法，常應用於測試漂白水中的次氯酸根 ($OCl^-$) 濃度或維他命C的含量。</p>
+        <div class="equation">$$I_2(aq) + 2S_2O_3^{2-}(aq) \rightarrow 2I^-(aq) + S_4O_6^{2-}(aq)$$</div>
+        <div class="alert-box">
+            <strong>DSE 必考實驗細節：指示劑的使用</strong><br>
+            必須在滴定<strong>接近終點</strong>（溶液由深棕色變為<span class="highlight">淡黃色</span>）時才加入<strong>澱粉溶液 (Starch solution)</strong>。加入後溶液變為深藍色。當最後一滴硫代硫酸鹽將所有 $I_2$ 轉化為 $I^-$ 時，溶液會<span class="highlight">突然由深藍色變為無色</span>，這就是滴定終點。
+        </div>
+
+        <h2>2. 現代儀器分析：紅外光譜 (IR Spectroscopy)</h2>
+        <p>用於鑑定有機分子中的<strong>官能基 (Functional groups)</strong>。在 DSE 中，你必須懂認以下兩個特徵峰：</p>
+        <ul>
+            <li><strong>$-OH$ 鍵 (醇/羧酸)</strong>：在波數約 $3200-3600 \, cm^{-1}$ 出現一個<span class="highlight">寬闊 (Broad)</span> 的吸收峰。</li>
+            <li><strong>$-C=O$ 鍵 (醛/酮/羧酸/酯)</strong>：在波數約 $1700 \, cm^{-1}$ 出現一個<span class="highlight">尖銳且強烈 (Sharp and strong)</span> 的吸收峰。</li>
+        </ul>
+
+        <h2>3. 現代儀器分析：質譜 (Mass Spectrometry)</h2>
+        <div class="concept-box">
+            <strong>解題兩步曲：</strong><br>
+            1. 找出 <strong>分子離子峰 ($M^+$ peak)</strong>：它是光譜中最右側（m/z 最大）的特徵峰，代表化合物的<span class="highlight">相對分子質量</span>。<br>
+            2. 觀察 <strong>碎片峰 (Fragment peaks)</strong>：例如 $m/z = 15$ ($CH_3^+$), $29$ ($C_2H_5^+$), $43$ ($C_3H_7^+$ 或 $CH_3CO^+$), $45$ ($COOH^+$)。考試時必須寫出帶正電荷 ($+$) 的碎片離子式！
+        </div>
+
+        <h2>4. 色層分析法 (Chromatography)</h2>
+        <p>用作分離混合物。物質在<strong>固定相 (Stationary phase)</strong> 和 <strong>流動相 (Mobile phase)</strong> 之間的分配差異導致分離。計算滯留因子：</p>
+        <div class="equation">$$R_f = \frac{\text{溶質移動的距離}}{\text{溶劑前沿移動的距離}}$$</div>
+
+        <h2>專業術語中英對照表</h2>
+        <table>
+            <tr><th>英文術語</th><th>中文翻譯</th><th>核心定義解釋</th></tr>
+            <tr><td>Colorimetry</td><td>比色法</td><td>利用溶液對光線的吸光度來測定其濃度的技術。</td></tr>
+            <tr><td>Calibration curve</td><td>校準曲線</td><td>繪製已知濃度與吸光度的圖表，用於尋找未知溶液濃度。</td></tr>
+            <tr><td>IR spectroscopy</td><td>紅外光譜</td><td>透過分子吸收紅外光引發的鍵振動，來鑑定官能基的分析法。</td></tr>
+            <tr><td>Mass spectrometry</td><td>質譜</td><td>測量氣態離子質荷比 (m/z) 來判定分子量及結構碎片的儀器。</td></tr>
+            <tr><td>Retention factor ($R_f$)</td><td>滯留因子</td><td>在層析法中，物質移動距離與溶劑移動距離的固定比值。</td></tr>
+        </table>
+    </div>
+
+    <div class="en">
+        <h1>DSE Chemistry Notes: Topic 15 Analytical Chemistry</h1>
+        
+        <h2>1. Redox Titrations</h2>
+        <p><strong>Iodine-thiosulphate titration ($I_2 / S_2O_3^{2-}$)</strong>: The most frequently tested titration in DSE, often used to determine the concentration of hypochlorite ($OCl^-$) in bleach or Vitamin C content.</p>
+        <div class="equation">$$I_2(aq) + 2S_2O_3^{2-}(aq) \rightarrow 2I^-(aq) + S_4O_6^{2-}(aq)$$</div>
+        <div class="alert-box">
+            <strong>DSE Crucial Experimental Detail: Use of Indicator</strong><br>
+            <strong>Starch solution</strong> must be added only when the titration is <strong>nearing the end point</strong> (when the solution changes from dark brown to <span class="highlight">pale yellow</span>). The solution turns dark blue. When the last drop of thiosulphate converts all $I_2$ to $I^-$, the solution <span class="highlight">suddenly changes from dark blue to colourless</span>, marking the end point.
+        </div>
+
+        <h2>2. Instrumental Analysis: IR Spectroscopy</h2>
+        <p>Used to identify <strong>functional groups</strong> in organic molecules. In DSE, you MUST recognize these two characteristic peaks:</p>
+        <ul>
+            <li><strong>$-OH$ bond (Alcohols/Carboxylic acids)</strong>: A <span class="highlight">broad</span> absorption peak at wavenumber around $3200-3600 \, cm^{-1}$.</li>
+            <li><strong>$-C=O$ bond (Aldehydes/Ketones/Acids/Esters)</strong>: A <span class="highlight">sharp and strong</span> absorption peak at wavenumber around $1700 \, cm^{-1}$.</li>
+        </ul>
+
+        <h2>3. Instrumental Analysis: Mass Spectrometry (MS)</h2>
+        <div class="concept-box">
+            <strong>Two-step Problem Solving:</strong><br>
+            1. Find the <strong>Molecular ion peak ($M^+$ peak)</strong>: The prominent peak furthest to the right (largest m/z), representing the <span class="highlight">relative molecular mass</span> of the compound.<br>
+            2. Observe <strong>Fragment peaks</strong>: E.g., $m/z = 15$ ($CH_3^+$), $29$ ($C_2H_5^+$), $43$ ($C_3H_7^+$ or $CH_3CO^+$), $45$ ($COOH^+$). In exams, you MUST write the formula of the fragment ion with a positive charge ($+$)!
+        </div>
+
+        <h2>4. Chromatography</h2>
+        <p>Used to separate mixtures based on the partition of substances between a <strong>stationary phase</strong> and a <strong>mobile phase</strong>. Calculation of the retention factor:</p>
+        <div class="equation">$$R_f = \frac{\text{Distance travelled by solute}}{\text{Distance travelled by solvent front}}$$</div>
+
+        <h2>Bilingual Glossary</h2>
+        <table>
+            <tr><th>English Term</th><th>Chinese Translation</th><th>Definition</th></tr>
+            <tr><td>Colorimetry</td><td>比色法</td><td>A technique used to determine the concentration of coloured compounds in solution by measuring their absorbance of light.</td></tr>
+            <tr><td>Calibration curve</td><td>校準曲線</td><td>A graph plotting absorbance against known concentrations to find the concentration of an unknown sample.</td></tr>
+            <tr><td>IR spectroscopy</td><td>紅外光譜</td><td>An analytical technique identifying functional groups via the vibration of chemical bonds absorbing infrared light.</td></tr>
+            <tr><td>Mass spectrometry</td><td>質譜</td><td>An analytical technique measuring the mass-to-charge ratio (m/z) of ions to determine molecular mass and structural fragments.</td></tr>
+            <tr><td>Retention factor ($R_f$)</td><td>滯留因子</td><td>The ratio of the distance travelled by the substance to the distance travelled by the solvent front in chromatography.</td></tr>
+        </table>
+    </div>
+
+</body>
+</html>

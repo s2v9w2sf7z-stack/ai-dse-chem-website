@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Chemistry Notes - Topic 14: Materials Chemistry</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+        function toggleLanguage() {
+            var isEng = document.getElementById('lang-toggle').checked;
+            var zhElements = document.querySelectorAll('.zh');
+            var enElements = document.querySelectorAll('.en');
+            zhElements.forEach(el => el.style.display = isEng ? 'none' : 'block');
+            enElements.forEach(el => el.style.display = isEng ? 'block' : 'none');
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 880px; padding: 20px; color: #333; }
+        h1, h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
+        h3 { color: #2c3e50; margin-top: 15px; }
+        .en { display: none; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; color: #0056b3; }
+        .toggle-container { margin-bottom: 20px; padding: 15px; background: #eef5f9; display: inline-block; border-radius: 8px; border: 1px solid #b3d4ec; font-weight: bold; cursor: pointer; }
+        .highlight { font-weight: bold; color: #d9534f; }
+        .equation { background: #f9f9f9; padding: 15px; border-left: 4px solid #0056b3; margin: 10px 0; font-family: monospace; font-size: 1.1em; overflow-x: auto; text-align: center; }
+        .concept-box { background: #e8f4f8; border-left: 5px solid #5bc0de; padding: 12px; margin: 15px 0; }
+        .alert-box { background: #feebeb; border-left: 5px solid #d9534f; padding: 12px; margin: 15px 0; }
+    </style>
+</head>
+<body onload="toggleLanguage()">
+    <div class="top-nav">
+        <div class="top-nav-container">
+            <a href="../index.html" class="back-btn">⬅ 返回課題列表</a>
+        </div>
+    </div>
+    <div class="toggle-container">
+        <label for="lang-toggle" style="cursor: pointer;">
+            <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()"> 
+            Switch to English Version (切換至英文版本)
+        </label>
+    </div>
+
+    <div class="zh">
+        <h1>DSE 化學筆記：課題十四 物料化學</h1>
+        
+        <h2>1. 縮合聚合作用 (Condensation Polymerisation)</h2>
+        <p>與加成聚合不同，縮合聚合需要單體最少具有<strong>兩個官能基</strong>，並在結合時釋出如 $H_2O$ 或 $HCl$ 等細小分子。</p>
+        <p><strong>聚酯 (Polyester, 如 PET) 的生成：</strong> 二酸 + 二醇</p>
+        <div class="equation">$$n \, HOOC-R-COOH + n \, HO-R'-OH \rightarrow -[-OC-R-CO-O-R'-O-]-_n + 2n \, H_2O$$</div>
+        <p><strong>聚酰胺 (Polyamide, 如 Nylon, Kevlar) 的生成：</strong> 二酸 + 二胺</p>
+        <div class="equation">$$n \, HOOC-R-COOH + n \, H_2N-R'-NH_2 \rightarrow -[-OC-R-CO-NH-R'-NH-]-_n + 2n \, H_2O$$</div>
+
+        <h2>2. 結構如何決定塑膠的物理性質？</h2>
+        <div class="concept-box">
+            <ul>
+                <li><strong>拉伸強度 (Tensile Strength)</strong>：若聚合物直鏈能緊密排列，並在鏈間形成強大的<span class="highlight">氫鍵 (Hydrogen bonds)</span>（如 Kevlar 中的酰胺基），其強度會極高。</li>
+                <li><strong>交聯 (Cross-linking)</strong>：引入共價鍵把聚合物鏈綁在一起。適度交聯產生彈性（如硫化橡膠）；大量交聯則形成堅硬的<span class="highlight">熱固性塑膠 (Thermosetting plastics)</span>，受熱不熔化。</li>
+                <li><strong>塑化劑 (Plasticizer)</strong>：分子夾在聚合物鏈之間，<span class="highlight">削弱了鏈與鏈之間的范德華力</span>。使得鏈層更容易滑動，從而把剛硬的塑膠變得柔軟。</li>
+            </ul>
+        </div>
+
+        <h2>3. 納米物料 (Nanomaterials)</h2>
+        <div class="alert-box">
+            <strong>DSE 常考概念：為何納米物料如此特別？</strong><br>
+            當物質被縮小到 1-100 nm（納米）時，其<span class="highlight">表面積對體積比例 (Surface area to volume ratio)</span> 會急劇上升。這意味著極高比例的原子暴露在表面，令其化學反應性（如催化能力）大增。例如：碳納米管 (Carbon nanotubes) 由於其獨特的圓柱形石墨烯網絡，具備極高的力學強度和導電性。
+        </div>
+
+        <h2>專業術語中英對照表</h2>
+        <table>
+            <tr><th>英文術語</th><th>中文翻譯</th><th>核心定義解釋</th></tr>
+            <tr><td>Condensation polymerisation</td><td>縮合聚合作用</td><td>單體結合形成聚合物並同時釋放細小分子（如水）的過程。</td></tr>
+            <tr><td>Cross-linking</td><td>交聯</td><td>聚合物鏈之間透過化學反應形成共價鍵，結合成三維網絡。</td></tr>
+            <tr><td>Plasticizer</td><td>塑化劑</td><td>加入聚合物中以削弱鏈間分子間引力，增加其柔軟度的物質。</td></tr>
+            <tr><td>Thermosetting plastic</td><td>熱固性塑膠</td><td>具大量交聯網絡的塑膠，受熱後不會熔化，無法重新注塑。</td></tr>
+            <tr><td>Nanomaterial</td><td>納米物料</td><td>至少在一個維度上尺寸介乎 1 nm 至 100 nm 的物質。</td></tr>
+        </table>
+    </div>
+
+    <div class="en">
+        <h1>DSE Chemistry Notes: Topic 14 Materials Chemistry</h1>
+        
+        <h2>1. Condensation Polymerisation</h2>
+        <p>Unlike addition polymerisation, condensation requires monomers with at least <strong>two functional groups</strong> and involves the elimination of a small molecule like $H_2O$ or $HCl$.</p>
+        <p><strong>Formation of Polyester (e.g., PET):</strong> Dicarboxylic acid + Diol</p>
+        <div class="equation">$$n \, HOOC-R-COOH + n \, HO-R'-OH \rightarrow -[-OC-R-CO-O-R'-O-]-_n + 2n \, H_2O$$</div>
+        <p><strong>Formation of Polyamide (e.g., Nylon, Kevlar):</strong> Dicarboxylic acid + Diamine</p>
+        <div class="equation">$$n \, HOOC-R-COOH + n \, H_2N-R'-NH_2 \rightarrow -[-OC-R-CO-NH-R'-NH-]-_n + 2n \, H_2O$$</div>
+
+        <h2>2. How Structure Determines Physical Properties?</h2>
+        <div class="concept-box">
+            <ul>
+                <li><strong>Tensile Strength</strong>: If polymer chains pack closely and form strong <span class="highlight">hydrogen bonds</span> between chains (e.g., amide groups in Kevlar), the strength is exceptionally high.</li>
+                <li><strong>Cross-linking</strong>: Introduction of covalent bonds linking polymer chains together. Extensive cross-linking forms rigid <span class="highlight">thermosetting plastics</span> which do not melt upon heating.</li>
+                <li><strong>Plasticizer</strong>: Small molecules embedded between polymer chains that <span class="highlight">weaken the intermolecular forces (Van der Waals' forces)</span> between the chains. This allows chains to slide over each other easily, making a rigid plastic flexible.</li>
+            </ul>
+        </div>
+
+        <h2>3. Nanomaterials</h2>
+        <div class="alert-box">
+            <strong>DSE Frequently Tested Concept: Why are nanomaterials special?</strong><br>
+            When materials are reduced to 1-100 nm, their <span class="highlight">surface area to volume ratio</span> increases dramatically. A very high proportion of atoms are exposed on the surface, greatly enhancing their chemical reactivity (e.g., as catalysts). For instance, Carbon Nanotubes (CNTs), due to their unique cylindrical graphene network, possess extremely high mechanical strength and electrical conductivity.
+        </div>
+
+        <h2>Bilingual Glossary</h2>
+        <table>
+            <tr><th>English Term</th><th>Chinese Translation</th><th>Definition</th></tr>
+            <tr><td>Condensation polymerisation</td><td>縮合聚合作用</td><td>Process where monomers join to form a polymer with the elimination of a small molecule (e.g., water).</td></tr>
+            <tr><td>Cross-linking</td><td>交聯</td><td>The formation of covalent bonds between adjacent polymer chains, creating a 3D network.</td></tr>
+            <tr><td>Plasticizer</td><td>塑化劑</td><td>A substance added to a polymer to weaken intermolecular forces, increasing its flexibility.</td></tr>
+            <tr><td>Thermosetting plastic</td><td>熱固性塑膠</td><td>A plastic with extensive cross-linking that does not melt upon heating and cannot be remoulded.</td></tr>
+            <tr><td>Nanomaterial</td><td>納米物料</td><td>A material having at least one dimension in the range of 1 nm to 100 nm.</td></tr>
+        </table>
+    </div>
+
+</body>
+</html>

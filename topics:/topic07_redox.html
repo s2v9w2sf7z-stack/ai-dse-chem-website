@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Chemistry Notes - Topic 7: Redox, Chemical Cells and Electrolysis</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+        function toggleLanguage() {
+            var isEng = document.getElementById('lang-toggle').checked;
+            var zhElements = document.querySelectorAll('.zh');
+            var enElements = document.querySelectorAll('.en');
+            zhElements.forEach(el => el.style.display = isEng ? 'none' : 'block');
+            enElements.forEach(el => el.style.display = isEng ? 'block' : 'none');
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 850px; padding: 20px; color: #333; }
+        h1, h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
+        h3 { color: #2c3e50; margin-top: 15px; }
+        .en { display: none; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; color: #0056b3; }
+        .toggle-container { margin-bottom: 20px; padding: 15px; background: #eef5f9; display: inline-block; border-radius: 8px; border: 1px solid #b3d4ec; font-weight: bold; cursor: pointer; }
+        .highlight { font-weight: bold; color: #d9534f; }
+        .equation { background: #f9f9f9; padding: 10px; border-left: 4px solid #0056b3; margin: 10px 0; font-family: monospace; font-size: 1.1em; }
+        .tip-box { background: #eef5e5; border-left: 5px solid #5cb85c; padding: 12px; margin: 15px 0; }
+    </style>
+</head>
+<body onload="toggleLanguage()">
+    <div class="top-nav">
+        <div class="top-nav-container">
+            <a href="../index.html" class="back-btn">⬅ 返回課題列表</a>
+        </div>
+    </div>
+    <div class="toggle-container">
+        <label for="lang-toggle" style="cursor: pointer;">
+            <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()"> 
+            Switch to English Version (切換至英文版本)
+        </label>
+    </div>
+
+    <div class="zh">
+        <h1>DSE 化學筆記：課題七 氧化還原、化學電池和電解</h1>
+        
+        <h2>1. 氧化還原反應 (Redox Reactions)</h2>
+        <p>氧化和還原必須同時進行。判斷氧化還原最準確的方法是計算<span class="highlight">氧化數 (Oxidation Number, ON)</span> 的變化。</p>
+        <div class="tip-box">
+            <strong>必背反應與顏色變化：</strong><br>
+            強氧化劑 <strong>酸化高錳酸鉀溶液 ($KMnO_4$)</strong>：<span class="highlight">紫色 (Purple) $\rightarrow$ 無色 (Colorless)</span>
+            <div class="equation">$MnO_4^-(aq) + 8H^+(aq) + 5e^- \rightarrow Mn^{2+}(aq) + 4H_2O(l)$</div>
+            強氧化劑 <strong>酸化重鉻酸鉀溶液 ($K_2Cr_2O_7$)</strong>：<span class="highlight">橙色 (Orange) $\rightarrow$ 綠色 (Green)</span>
+            <div class="equation">$Cr_2O_7^{2-}(aq) + 14H^+(aq) + 6e^- \rightarrow 2Cr^{3+}(aq) + 7H_2O(l)$</div>
+        </div>
+
+        <h2>2. 化學電池 (Chemical Cells)</h2>
+        <p>將化學能轉化為電能。在由兩種不同金屬組成的電池中：</p>
+        <ul>
+            <li><strong>較活潑的金屬</strong>（例如鋅 $Zn$）會失去電子，形成<span class="highlight">負極 (Negative pole)</span>。此處發生氧化作用（陽極）。
+                <div class="equation">$Zn(s) \rightarrow Zn^{2+}(aq) + 2e^-$</div>
+            </li>
+            <li><strong>較不活潑的金屬</strong>（例如銅 $Cu$）的電極上，溶液中的陽離子會接收電子，形成<span class="highlight">正極 (Positive pole)</span>。此處發生還原作用（陰極）。
+                <div class="equation">$Cu^{2+}(aq) + 2e^- \rightarrow Cu(s)$</div>
+            </li>
+        </ul>
+        <p><strong>鹽橋的功能</strong>：1. 完成電路； 2. 提供離子（如 $K^+, NO_3^-$）以平衡兩個半電池中積聚的電荷。</p>
+
+        <h2>3. 電解 (Electrolysis)</h2>
+        <p>將直流電通過電解質以引發非自發化學反應。<strong>優先放電 (Preferential discharge)</strong> 取決於三大因素：</p>
+        <ol>
+            <li><strong>電化學序 (Position in ECS)</strong>：通常位置越低，越容易放電。</li>
+            <li><strong>濃度效應 (Concentration effect)</strong>：若鹵素離子（如 $Cl^-, Br^-, I^-$）<span class="highlight">濃度極高</span>，它們會優先於 $OH^-$ 放電。</li>
+            <li><strong>電極本質 (Nature of electrode)</strong>：若使用非惰性電極（如銅陽極），陽極金屬本身會優先被氧化溶解。</li>
+        </ol>
+
+        <h2>專業術語中英對照表</h2>
+        <table>
+            <tr><th>英文術語</th><th>中文翻譯</th><th>核心定義解釋</th></tr>
+            <tr><td>Oxidation number</td><td>氧化數</td><td>表示元素在化合物中失去或獲得電子的相對程度。</td></tr>
+            <tr><td>Salt bridge</td><td>鹽橋</td><td>含有惰性電解質的連接裝置，用於接通電路及平衡電荷。</td></tr>
+            <tr><td>Electrolysis</td><td>電解</td><td>透過直流電使熔融或水溶液狀態的電解質分解的過程。</td></tr>
+            <tr><td>Anode</td><td>陽極</td><td>發生氧化作用的電極（化學電池中為負極，電解池中為正極）。</td></tr>
+            <tr><td>Cathode</td><td>陰極</td><td>發生還原作用的電極（化學電池中為正極，電解池中為負極）。</td></tr>
+        </table>
+    </div>
+
+    <div class="en">
+        <h1>DSE Chemistry Notes: Topic 7 Redox, Chemical Cells & Electrolysis</h1>
+        
+        <h2>1. Redox Reactions</h2>
+        <p>Oxidation and reduction must occur simultaneously. The most accurate way to identify a redox reaction is to check for changes in <span class="highlight">Oxidation Number (ON)</span>.</p>
+        <div class="tip-box">
+            <strong>Must-Memorize Reactions & Color Changes:</strong><br>
+            Strong oxidizing agent <strong>Acidified Potassium Permanganate ($KMnO_4$)</strong>: <span class="highlight">Purple $\rightarrow$ Colorless</span>
+            <div class="equation">$MnO_4^-(aq) + 8H^+(aq) + 5e^- \rightarrow Mn^{2+}(aq) + 4H_2O(l)$</div>
+            Strong oxidizing agent <strong>Acidified Potassium Dichromate ($K_2Cr_2O_7$)</strong>: <span class="highlight">Orange $\rightarrow$ Green</span>
+            <div class="equation">$Cr_2O_7^{2-}(aq) + 14H^+(aq) + 6e^- \rightarrow 2Cr^{3+}(aq) + 7H_2O(l)$</div>
+        </div>
+
+        <h2>2. Chemical Cells</h2>
+        <p>Convert chemical energy to electrical energy. In a cell made of two different metals:</p>
+        <ul>
+            <li><strong>The more reactive metal</strong> (e.g., $Zn$) loses electrons and forms the <span class="highlight">negative pole</span>. Oxidation occurs here (Anode).
+                <div class="equation">$Zn(s) \rightarrow Zn^{2+}(aq) + 2e^-$</div>
+            </li>
+            <li><strong>At the less reactive metal</strong> (e.g., $Cu$), cations in the solution gain electrons, forming the <span class="highlight">positive pole</span>. Reduction occurs here (Cathode).
+                <div class="equation">$Cu^{2+}(aq) + 2e^- \rightarrow Cu(s)$</div>
+            </li>
+        </ul>
+        <p><strong>Functions of Salt Bridge</strong>: 1. Complete the circuit; 2. Provide ions (e.g., $K^+, NO_3^-$) to balance the built-up charges in the two half-cells.</p>
+
+        <h2>3. Electrolysis</h2>
+        <p>Passing direct current through an electrolyte to induce a non-spontaneous chemical reaction. <strong>Preferential discharge</strong> depends on three factors:</p>
+        <ol>
+            <li><strong>Position in ECS</strong>: Ions lower in the series usually discharge more readily.</li>
+            <li><strong>Concentration effect</strong>: If halide ions (e.g., $Cl^-, Br^-, I^-$) are in <span class="highlight">high concentration</span>, they discharge preferentially over $OH^-$.</li>
+            <li><strong>Nature of electrode</strong>: If non-inert electrodes are used (e.g., Cu anode), the anode metal itself oxidises and dissolves preferentially.</li>
+        </ol>
+
+        <h2>Bilingual Glossary</h2>
+        <table>
+            <tr><th>English Term</th><th>Chinese Translation</th><th>Definition</th></tr>
+            <tr><td>Oxidation number</td><td>氧化數</td><td>A value assigned to an element representing its degree of electron loss or gain.</td></tr>
+            <tr><td>Salt bridge</td><td>鹽橋</td><td>A connection containing inert electrolyte that completes the circuit and balances charges.</td></tr>
+            <tr><td>Electrolysis</td><td>電解</td><td>Decomposition of a substance by passing an electric current through it.</td></tr>
+            <tr><td>Anode</td><td>陽極</td><td>The electrode where oxidation occurs (Negative in chemical cell, Positive in electrolytic cell).</td></tr>
+            <tr><td>Cathode</td><td>陰極</td><td>The electrode where reduction occurs (Positive in chemical cell, Negative in electrolytic cell).</td></tr>
+        </table>
+    </div>
+
+</body>
+</html>

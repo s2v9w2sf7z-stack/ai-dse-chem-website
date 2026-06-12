@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Chemistry Notes - Topic 2: Microscopic World I</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+        // 語言切換功能
+        function toggleLanguage() {
+            var isEng = document.getElementById('lang-toggle').checked;
+            var zhElements = document.querySelectorAll('.zh');
+            var enElements = document.querySelectorAll('.en');
+            zhElements.forEach(el => el.style.display = isEng ? 'none' : 'block');
+            enElements.forEach(el => el.style.display = isEng ? 'block' : 'none');
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 850px; padding: 20px; color: #333; }
+        h1, h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
+        .en { display: none; } /* 預設顯示中文 */
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; color: #0056b3; }
+        .toggle-container { margin-bottom: 20px; padding: 15px; background: #eef5f9; display: inline-block; border-radius: 8px; border: 1px solid #b3d4ec; font-weight: bold; cursor: pointer; }
+        .highlight { font-weight: bold; color: #d9534f; }
+        .concept-box { background: #fdfaf6; border-left: 5px solid #f0ad4e; padding: 10px 15px; margin: 10px 0; }
+    </style>
+</head>
+<body onload="toggleLanguage()">
+    <div class="top-nav">
+        <div class="top-nav-container">
+            <a href="../index.html" class="back-btn">⬅ 返回課題列表</a>
+        </div>
+    </div>
+    <div class="toggle-container">
+        <label for="lang-toggle" style="cursor: pointer;">
+            <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()"> 
+            Switch to English Version (切換至英文版本)
+        </label>
+    </div>
+
+    <div class="zh">
+        <h1>DSE 化學筆記：課題二 微觀世界 I</h1>
+        
+        <h2>核心概念摘要</h2>
+        <div class="concept-box">
+            <strong>化學鍵的本質</strong>：所有化學鍵（金屬、離子、共價）本質上都是帶相反電荷粒子之間的<span class="highlight">靜電引力</span>。
+        </div>
+        <ul>
+            <li><strong>原子與同位素</strong>：同位素擁有相同數量的質子，但<span class="highlight">中子數量不同</span>。它們的化學性質完全相同。</li>
+            <li><strong>化學鍵</strong>：
+                <ul>
+                    <li><strong>金屬鍵</strong>：金屬陽離子（如 $Mg^{2+}$）與<span class="highlight">離域電子</span>之間的引力。</li>
+                    <li><strong>離子鍵</strong>：金屬與非金屬之間的電子轉移。例如鈉原子失去一個電子變成 $Na^+$，氯原子獲得一個電子變成 $Cl^-$。</li>
+                    <li><strong>共價鍵</strong>：非金屬原子間透過<span class="highlight">共用電子對</span>以達到穩定的八隅體（Octet）結構。</li>
+                </ul>
+            </li>
+            <li><strong>四種結構與性質</strong>：
+                <ul>
+                    <li><strong>巨型離子結構</strong>：固態不導電，<span class="highlight">熔融或水溶液狀態導電</span>（因離子變得可自由移動）。具高熔點。</li>
+                    <li><strong>簡單分子結構</strong>：低熔點/沸點，因為分子間的<span class="highlight">范德華力</span>很弱。即使分子內共價鍵很強，狀態改變只需克服分子間引力。</li>
+                    <li><strong>巨型共價結構</strong>：如鑽石和石英（$SiO_2$）。極高熔點且堅硬。石墨是例外，因擁有離域電子而<span class="highlight">能導電</span>。</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>專業術語中英對照表</h2>
+        <table>
+            <tr><th>英文術語</th><th>中文翻譯</th><th>核心定義解釋</th></tr>
+            <tr><td>Isotope</td><td>同位素</td><td>具有相同質子數但不同中子數的同種元素原子。</td></tr>
+            <tr><td>Delocalised electrons</td><td>離域電子</td><td>能在整個宏觀結構（如金屬或石墨）中自由移動的電子。</td></tr>
+            <tr><td>Electrostatic attraction</td><td>靜電引力</td><td>帶相反電荷的粒子之間的吸引力。</td></tr>
+            <tr><td>Van der Waals' forces</td><td>范德華力</td><td>存在於簡單分子之間的微弱分子間引力。</td></tr>
+            <tr><td>Giant covalent structure</td><td>巨型共價結構</td><td>大量原子透過強大的共價鍵結合成三維網絡的結構。</td></tr>
+        </table>
+    </div>
+
+    <div class="en">
+        <h1>DSE Chemistry Notes: Topic 2 Microscopic World I</h1>
+        
+        <h2>Core Concepts Summary</h2>
+        <div class="concept-box">
+            <strong>Nature of Bonding</strong>: All chemical bonds (metallic, ionic, covalent) are fundamentally <span class="highlight">electrostatic attractions</span> between oppositely charged particles.
+        </div>
+        <ul>
+            <li><strong>Atoms and Isotopes</strong>: Isotopes have the same number of protons but <span class="highlight">different numbers of neutrons</span>. They have identical chemical properties.</li>
+            <li><strong>Chemical Bonding</strong>:
+                <ul>
+                    <li><strong>Metallic bond</strong>: The attraction between metal cations (e.g., $Mg^{2+}$) and a sea of <span class="highlight">delocalised electrons</span>.</li>
+                    <li><strong>Ionic bond</strong>: Electron transfer between metals and non-metals. E.g., a sodium atom loses an electron to form $Na^+$, while a chlorine atom gains one to form $Cl^-$.</li>
+                    <li><strong>Covalent bond</strong>: <span class="highlight">Sharing of electron pairs</span> between non-metal atoms to attain a stable octet structure.</li>
+                </ul>
+            </li>
+            <li><strong>Four Structures and Properties</strong>:
+                <ul>
+                    <li><strong>Giant ionic structure</strong>: Non-conductors in solid state, but <span class="highlight">conduct electricity in molten or aqueous states</span> (due to mobile ions). High melting points.</li>
+                    <li><strong>Simple molecular structure</strong>: Low melting/boiling points because the <span class="highlight">Van der Waals' forces</span> between molecules are weak.</li>
+                    <li><strong>Giant covalent structure</strong>: e.g., Diamond and quartz ($SiO_2$). Extremely high melting points and very hard. Graphite is an exception; it <span class="highlight">conducts electricity</span> due to delocalised electrons.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Bilingual Glossary</h2>
+        <table>
+            <tr><th>English Term</th><th>Chinese Translation</th><th>Definition</th></tr>
+            <tr><td>Isotope</td><td>同位素</td><td>Atoms of the same element with the same number of protons but different numbers of neutrons.</td></tr>
+            <tr><td>Delocalised electrons</td><td>離域電子</td><td>Electrons that are free to move throughout a giant structure (like metals or graphite).</td></tr>
+            <tr><td>Electrostatic attraction</td><td>靜電引力</td><td>The attractive force between oppositely charged particles.</td></tr>
+            <tr><td>Van der Waals' forces</td><td>范德華力</td><td>Weak intermolecular forces that exist between simple molecules.</td></tr>
+            <tr><td>Giant covalent structure</td><td>巨型共價結構</td><td>A massive 3D network of atoms joined together by strong covalent bonds.</td></tr>
+        </table>
+    </div>
+
+</body>
+</html>

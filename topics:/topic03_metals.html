@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Chemistry Notes - Topic 3: Metals</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+        function toggleLanguage() {
+            var isEng = document.getElementById('lang-toggle').checked;
+            var zhElements = document.querySelectorAll('.zh');
+            var enElements = document.querySelectorAll('.en');
+            zhElements.forEach(el => el.style.display = isEng ? 'none' : 'block');
+            enElements.forEach(el => el.style.display = isEng ? 'block' : 'none');
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 850px; padding: 20px; color: #333; }
+        h1, h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
+        h3 { color: #2c3e50; }
+        .en { display: none; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; color: #0056b3; }
+        .toggle-container { margin-bottom: 20px; padding: 15px; background: #eef5f9; display: inline-block; border-radius: 8px; border: 1px solid #b3d4ec; font-weight: bold; cursor: pointer; }
+        .highlight { font-weight: bold; color: #d9534f; }
+        .equation { background: #f9f9f9; padding: 10px; border-left: 4px solid #0056b3; margin: 10px 0; font-family: monospace; }
+        .tip-box { background: #fff3cd; border-left: 5px solid #ffc107; padding: 12px; margin: 15px 0; }
+    </style>
+</head>
+<body onload="toggleLanguage()">
+    <div class="top-nav">
+        <div class="top-nav-container">
+            <a href="../index.html" class="back-btn">⬅ 返回課題列表</a>
+        </div>
+    </div>
+    <div class="toggle-container">
+        <label for="lang-toggle" style="cursor: pointer;">
+            <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()"> 
+            Switch to English Version (切換至英文版本)
+        </label>
+    </div>
+
+    <div class="zh">
+        <h1>DSE 化學筆記：課題三 金屬</h1>
+        
+        <h2>1. 金屬的提取與活動性序列</h2>
+        <p>金屬的提取方法取決於其在<strong>金屬活動性序</strong>中的位置。活潑性越高的金屬，其化合物越穩定，提取所需的能量就越大。</p>
+        <table>
+            <tr><th>金屬位置</th><th>提取方法</th><th>實例與化學反應</th></tr>
+            <tr><td>高活潑性 ($K$ 至 $Al$)</td><td><span class="highlight">電解熔融礦石</span></td><td>電解熔融氧化鋁以提取鋁 ($Al$)。</td></tr>
+            <tr><td>中活潑性 ($Zn$ 至 $Cu$)</td><td><span class="highlight">與碳共熱（碳還原法）</span></td><td>$2Fe_2O_3(s) + 3C(s) \rightarrow 4Fe(s) + 3CO_2(g)$</td></tr>
+            <tr><td>低活潑性 ($Hg, Ag$)</td><td><span class="highlight">單獨加熱礦石</span></td><td>$2HgO(s) \rightarrow 2Hg(l) + O_2(g)$</td></tr>
+        </table>
+
+        <h2>2. 金屬的化學反應與置換</h2>
+        <h3>A. 與水及酸反應</h3>
+        <ul>
+            <li>鈉與冷水劇烈反應：<div class="equation">$2Na(s) + 2H_2O(l) \rightarrow 2NaOH(aq) + H_2(g)$</div></li>
+            <li>鎂與蒸汽反應：<div class="equation">$Mg(s) + H_2O(g) \rightarrow MgO(s) + H_2(g)$</div></li>
+        </ul>
+        <h3>B. 置換反應 (Displacement Reaction)</h3>
+        <p>較活潑的金屬能將較不活潑的金屬從其鹽溶液中置換出來。例如將鐵釘放入硫酸銅($II$)溶液中：</p>
+        <ul>
+            <li><strong>實驗現象</strong>：藍色溶液漸變成<span class="highlight">淡綠色</span>（因形成 $Fe^{2+}$）；鐵釘表面覆蓋一層<span class="highlight">紅褐色固體</span>（因置換出 $Cu$）。</li>
+            <li><strong>離子方程式</strong>：<div class="equation">$Fe(s) + Cu^{2+}(aq) \rightarrow Fe^{2+}(aq) + Cu(s)$</div></li>
+        </ul>
+
+        <h2>3. 鐵的生鏽與防鏽</h2>
+        <p>鐵生鏽的必要條件是<strong>水</strong>和<strong>氧氣</strong>。防鏽的核心原理是隔絕這兩者，或利用電化學原理。</p>
+        <div class="tip-box">
+            <strong>犧牲性保護 (Sacrificial Protection)</strong>：當鐵連接到較活潑的金屬（如 $Zn$）時，較活潑的金屬會<span class="highlight">優先失去電子</span>而被氧化，從而保護鐵不被生鏽。即使表面有刮痕，此保護依然有效。
+        </div>
+
+        <h2>專業術語中英對照表</h2>
+        <table>
+            <tr><th>英文術語</th><th>中文翻譯</th><th>核心定義解釋</th></tr>
+            <tr><td>Reactivity series</td><td>金屬活動性序</td><td>根據金屬發生化學反應的劇烈程度由大至小排列的序列。</td></tr>
+            <tr><td>Displacement reaction</td><td>置換反應</td><td>較活潑的元素取代化合物中另一種較不活潑元素的反應。</td></tr>
+            <tr><td>Sacrificial protection</td><td>犧牲性保護</td><td>將較活潑金屬連接到鐵上，讓其優先被氧化以防止鐵生鏽的方法。</td></tr>
+        </table>
+    </div>
+
+    <div class="en">
+        <h1>DSE Chemistry Notes: Topic 3 Metals</h1>
+        
+        <h2>1. Metal Extraction and Reactivity Series</h2>
+        <p>The extraction method of a metal depends on its position in the <strong>metal reactivity series</strong>. More reactive metals form more stable compounds, requiring more energy to extract.</p>
+        <table>
+            <tr><th>Position in Series</th><th>Extraction Method</th><th>Examples & Chemical Equations</th></tr>
+            <tr><td>High reactivity ($K$ to $Al$)</td><td><span class="highlight">Electrolysis of molten ore</span></td><td>Electrolysis of molten aluminium oxide to extract Al.</td></tr>
+            <tr><td>Medium reactivity ($Zn$ to $Cu$)</td><td><span class="highlight">Heating with carbon (Carbon reduction)</span></td><td>$2Fe_2O_3(s) + 3C(s) \rightarrow 4Fe(s) + 3CO_2(g)$</td></tr>
+            <tr><td>Low reactivity ($Hg, Ag$)</td><td><span class="highlight">Heating ore alone</span></td><td>$2HgO(s) \rightarrow 2Hg(l) + O_2(g)$</td></tr>
+        </table>
+
+        <h2>2. Chemical Reactions and Displacement</h2>
+        <h3>A. Reactions with Water and Acids</h3>
+        <ul>
+            <li>Sodium reacts vigorously with cold water:<div class="equation">$2Na(s) + 2H_2O(l) \rightarrow 2NaOH(aq) + H_2(g)$</div></li>
+            <li>Magnesium reacts with steam:<div class="equation">$Mg(s) + H_2O(g) \rightarrow MgO(s) + H_2(g)$</div></li>
+        </ul>
+        <h3>B. Displacement Reactions</h3>
+        <p>A more reactive metal displaces a less reactive metal from its salt solution. E.g., placing an iron nail into copper(II) sulphate solution:</p>
+        <ul>
+            <li><strong>Observations</strong>: Blue solution turns <span class="highlight">pale green</span> (due to $Fe^{2+}$); <span class="highlight">reddish-brown solid</span> deposits on the nail (due to $Cu$).</li>
+            <li><strong>Ionic Equation</strong>:<div class="equation">$Fe(s) + Cu^{2+}(aq) \rightarrow Fe^{2+}(aq) + Cu(s)$</div></li>
+        </ul>
+
+        <h2>3. Iron Corrosion (Rusting) and Prevention</h2>
+        <p>The essential conditions for rusting are <strong>water</strong> and <strong>oxygen</strong>. Prevention relies on breaking this contact or electrochemistry.</p>
+        <div class="tip-box">
+            <strong>Sacrificial Protection</strong>: When iron is connected to a more reactive metal (e.g., $Zn$), the more reactive metal <span class="highlight">loses electrons preferentially</span> and undergoes oxidation, protecting the iron. This works even if the surface is scratched.
+        </div>
+
+        <h2>Bilingual Glossary</h2>
+        <table>
+            <tr><th>English Term</th><th>Chinese Translation</th><th>Definition</th></tr>
+            <tr><td>Reactivity series</td><td>金屬活動性序</td><td>A list of metals arranged in order of their reactivity (ease of losing electrons).</td></tr>
+            <tr><td>Displacement reaction</td><td>置換反應</td><td>A chemical reaction where a more reactive element takes the place of a less reactive element in a compound.</td></tr>
+            <tr><td>Sacrificial protection</td><td>犧牲性保護</td><td>A method of rust prevention by connecting iron to a more reactive metal which oxidises preferentially.</td></tr>
+        </table>
+    </div>
+
+</body>
+</html>

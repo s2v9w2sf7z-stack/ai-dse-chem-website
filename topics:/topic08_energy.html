@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Chemistry Notes - Topic 8: Chemical Reactions and Energy</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+        function toggleLanguage() {
+            var isEng = document.getElementById('lang-toggle').checked;
+            var zhElements = document.querySelectorAll('.zh');
+            var enElements = document.querySelectorAll('.en');
+            zhElements.forEach(el => el.style.display = isEng ? 'none' : 'block');
+            enElements.forEach(el => el.style.display = isEng ? 'block' : 'none');
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 850px; padding: 20px; color: #333; }
+        h1, h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
+        h3 { color: #2c3e50; margin-top: 15px; }
+        .en { display: none; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; color: #0056b3; }
+        .toggle-container { margin-bottom: 20px; padding: 15px; background: #eef5f9; display: inline-block; border-radius: 8px; border: 1px solid #b3d4ec; font-weight: bold; cursor: pointer; }
+        .highlight { font-weight: bold; color: #d9534f; }
+        .equation { background: #f9f9f9; padding: 10px; border-left: 4px solid #0056b3; margin: 10px 0; font-family: monospace; font-size: 1.1em; }
+        .concept-box { background: #fce8e6; border-left: 5px solid #d9534f; padding: 12px; margin: 15px 0; }
+        .concept-box-blue { background: #e6f2ff; border-left: 5px solid #0066cc; padding: 12px; margin: 15px 0; }
+    </style>
+</head>
+<body onload="toggleLanguage()">
+    <div class="top-nav">
+        <div class="top-nav-container">
+            <a href="../index.html" class="back-btn">⬅ 返回課題列表</a>
+        </div>
+    </div>
+    <div class="toggle-container">
+        <label for="lang-toggle" style="cursor: pointer;">
+            <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()"> 
+            Switch to English Version (切換至英文版本)
+        </label>
+    </div>
+
+    <div class="zh">
+        <h1>DSE 化學筆記：課題八 化學反應和能量</h1>
+        
+        <h2>1. 系統與環境的熱能轉移</h2>
+        <div class="concept-box">
+            <strong>放熱反應 (Exothermic)</strong>：反應物總焓 > 生成物總焓。<br>
+            熱能流向：系統 $\rightarrow$ 環境。環境溫度<span class="highlight">上升</span>。 $\Delta H < 0$（負值）。
+        </div>
+        <div class="concept-box-blue">
+            <strong>吸熱反應 (Endothermic)</strong>：反應物總焓 < 生成物總焓。<br>
+            熱能流向：環境 $\rightarrow$ 系統。環境溫度<span class="highlight">下降</span>。 $\Delta H > 0$（正值）。
+        </div>
+
+        <h2>2. 量熱法 (Calorimetry) 計算公式</h2>
+        <p>計算反應釋放或吸收的熱能 ($E$)：</p>
+        <div class="equation">$$E = mc\Delta T$$</div>
+        <ul>
+            <li>$m$：被加熱/冷卻物質的質量 (g)（通常是水的質量）</li>
+            <li>$c$：比熱容量 (如水為 $4.2 \, J \, g^{-1} \, K^{-1}$)</li>
+            <li>$\Delta T$：溫度變化 ($K$ 或 $^\circ C$)</li>
+        </ul>
+        <p>計算摩爾焓變 ($\Delta H$)：</p>
+        <div class="equation">$$\Delta H = -\frac{E}{n}$$</div>
+        <p><em>注意：若溫度上升（放熱），加上負號以符合 $\Delta H$ 為負值的定義。</em></p>
+
+        <h2>3. 赫斯定律 (Hess's Law)</h2>
+        <p>「化學反應的總焓變只取決於始態和終態，與反應途徑無關。」</p>
+        <p><strong>DSE 常考公式推導：</strong></p>
+        <ul>
+            <li>利用<strong>燃燒焓 ($\Delta H_c^\ominus$)</strong> 計算：<br>
+                <span class="highlight">$\Delta H = \Sigma \Delta H_c^\ominus (\text{反應物}) - \Sigma \Delta H_c^\ominus (\text{生成物})$</span>
+            </li>
+            <li>利用<strong>生成焓 ($\Delta H_f^\ominus$)</strong> 計算：<br>
+                <span class="highlight">$\Delta H = \Sigma \Delta H_f^\ominus (\text{生成物}) - \Sigma \Delta H_f^\ominus (\text{反應物})$</span>
+            </li>
+        </ul>
+
+        <h2>專業術語中英對照表</h2>
+        <table>
+            <tr><th>英文術語</th><th>中文翻譯</th><th>核心定義解釋</th></tr>
+            <tr><td>Enthalpy change ($\Delta H$)</td><td>焓變</td><td>在恆定壓強下化學反應中系統的熱能變化。</td></tr>
+            <tr><td>Exothermic reaction</td><td>放熱反應</td><td>向周圍環境釋放熱能的反應，$\Delta H$ 為負數。</td></tr>
+            <tr><td>Standard enthalpy change of combustion</td><td>標準燃燒焓</td><td>1 摩爾物質在氧氣中完全燃燒時的焓變（標準狀況下）。</td></tr>
+            <tr><td>Hess's Law</td><td>赫斯定律</td><td>反應總焓變只取決於始態和終態，與反應途徑無關。</td></tr>
+        </table>
+    </div>
+
+    <div class="en">
+        <h1>DSE Chemistry Notes: Topic 8 Chemical Reactions and Energy</h1>
+        
+        <h2>1. Heat Transfer between System and Surroundings</h2>
+        <div class="concept-box">
+            <strong>Exothermic reaction</strong>: Total enthalpy of reactants > products.<br>
+            Heat flow: System $\rightarrow$ Surroundings. Surrounding temperature <span class="highlight">rises</span>. $\Delta H < 0$ (negative).
+        </div>
+        <div class="concept-box-blue">
+            <strong>Endothermic reaction</strong>: Total enthalpy of reactants < products.<br>
+            Heat flow: Surroundings $\rightarrow$ System. Surrounding temperature <span class="highlight">drops</span>. $\Delta H > 0$ (positive).
+        </div>
+
+        <h2>2. Calorimetry Calculations</h2>
+        <p>Calculate heat transferred ($E$):</p>
+        <div class="equation">$$E = mc\Delta T$$</div>
+        <ul>
+            <li>$m$: mass of substance heated/cooled (g) (usually water)</li>
+            <li>$c$: specific heat capacity (e.g., water is $4.2 \, J \, g^{-1} \, K^{-1}$)</li>
+            <li>$\Delta T$: temperature change ($K$ or $^\circ C$)</li>
+        </ul>
+        <p>Calculate molar enthalpy change ($\Delta H$):</p>
+        <div class="equation">$$\Delta H = -\frac{E}{n}$$</div>
+        <p><em>Note: Add a negative sign if temperature rises (exothermic) to match the negative $\Delta H$ definition.</em></p>
+
+        <h2>3. Hess's Law</h2>
+        <p>"The total enthalpy change of a chemical reaction is independent of the pathway between the initial and final states."</p>
+        <p><strong>Common DSE Formulae:</strong></p>
+        <ul>
+            <li>Using <strong>Enthalpy change of combustion ($\Delta H_c^\ominus$)</strong>:<br>
+                <span class="highlight">$\Delta H = \Sigma \Delta H_c^\ominus (\text{Reactants}) - \Sigma \Delta H_c^\ominus (\text{Products})$</span>
+            </li>
+            <li>Using <strong>Enthalpy change of formation ($\Delta H_f^\ominus$)</strong>:<br>
+                <span class="highlight">$\Delta H = \Sigma \Delta H_f^\ominus (\text{Products}) - \Sigma \Delta H_f^\ominus (\text{Reactants})$</span>
+            </li>
+        </ul>
+
+        <h2>Bilingual Glossary</h2>
+        <table>
+            <tr><th>English Term</th><th>Chinese Translation</th><th>Definition</th></tr>
+            <tr><td>Enthalpy change ($\Delta H$)</td><td>焓變</td><td>The heat energy change of a chemical system at constant pressure.</td></tr>
+            <tr><td>Exothermic reaction</td><td>放熱反應</td><td>A reaction that releases heat to the surroundings; $\Delta H$ is negative.</td></tr>
+            <tr><td>Standard enthalpy change of combustion</td><td>標準燃燒焓</td><td>Enthalpy change when 1 mole of a substance is completely burnt in oxygen under standard conditions.</td></tr>
+            <tr><td>Hess's Law</td><td>赫斯定律</td><td>The total enthalpy change is independent of the reaction pathway.</td></tr>
+        </table>
+    </div>
+
+</body>
+</html>

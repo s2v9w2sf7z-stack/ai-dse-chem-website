@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Chemistry Notes - Topic 11: Chemistry of Carbon Compounds</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+        function toggleLanguage() {
+            var isEng = document.getElementById('lang-toggle').checked;
+            var zhElements = document.querySelectorAll('.zh');
+            var enElements = document.querySelectorAll('.en');
+            zhElements.forEach(el => el.style.display = isEng ? 'none' : 'block');
+            enElements.forEach(el => el.style.display = isEng ? 'block' : 'none');
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 880px; padding: 20px; color: #333; }
+        h1, h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
+        h3 { color: #2c3e50; margin-top: 15px; }
+        .en { display: none; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; color: #0056b3; }
+        .toggle-container { margin-bottom: 20px; padding: 15px; background: #eef5f9; display: inline-block; border-radius: 8px; border: 1px solid #b3d4ec; font-weight: bold; cursor: pointer; }
+        .highlight { font-weight: bold; color: #d9534f; }
+        .equation { background: #f9f9f9; padding: 15px; border-left: 4px solid #0056b3; margin: 10px 0; font-family: monospace; font-size: 1.1em; overflow-x: auto; }
+        .concept-box { background: #fdf5e6; border-left: 5px solid #f0ad4e; padding: 12px; margin: 15px 0; }
+        .alert-box { background: #feebeb; border-left: 5px solid #d9534f; padding: 12px; margin: 15px 0; }
+    </style>
+</head>
+<body onload="toggleLanguage()">
+    <div class="top-nav">
+        <div class="top-nav-container">
+            <a href="../index.html" class="back-btn">⬅ 返回課題列表</a>
+        </div>
+    </div>
+    <div class="toggle-container">
+        <label for="lang-toggle" style="cursor: pointer;">
+            <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()"> 
+            Switch to English Version (切換至英文版本)
+        </label>
+    </div>
+
+    <div class="zh">
+        <h1>DSE 化學筆記：課題十一 碳化合物的化學</h1>
+        
+        <h2>1. 立體異構 (Stereoisomerism)</h2>
+        <div class="concept-box">
+            立體異構體具有相同的分子式及結構式，但原子的<strong>空間排列</strong>不同。
+            <ul>
+                <li><strong>順反異構 (Cis-trans)</strong>：因 $C=C$ 雙鍵不能自由旋轉而產生。條件是每個雙鍵碳原子上必須連有<strong>兩個不同的原子或基團</strong>。</li>
+                <li><strong>對映異構 (Enantiomerism)</strong>：分子具有<span class="highlight">手性碳 (Chiral carbon)</span>（連有4個互不相同的基團），形成一對不能重疊的鏡像。這對異構體的化學和物理性質幾乎完全相同，唯一差別是<strong>對偏振光 (plane-polarized light) 的旋轉方向相反</strong>。</li>
+            </ul>
+        </div>
+
+        <h2>2. 核心反應路線 (Synthetic Pathways)</h2>
+        <table>
+            <tr><th>反應物</th><th>試劑與條件 (Reagents & Conditions)</th><th>生成物</th><th>反應類型</th></tr>
+            <tr><td><strong>一級醇 (1° Alcohol)</strong></td><td>$K_2Cr_2O_7 / H^+(aq)$，<span class="highlight">回流加熱</span></td><td><strong>羧酸 (Carboxylic Acid)</strong></td><td>氧化 (Oxidation)</td></tr>
+            <tr><td><strong>二級醇 (2° Alcohol)</strong></td><td>$K_2Cr_2O_7 / H^+(aq)$，<span class="highlight">回流加熱</span></td><td><strong>酮 (Ketone)</strong></td><td>氧化 (Oxidation)</td></tr>
+            <tr><td><strong>鹵代烷 (Haloalkane)</strong></td><td>$NaOH(aq)$，加熱</td><td><strong>醇 (Alcohol)</strong></td><td>取代 (Substitution)</td></tr>
+            <tr><td><strong>醇 + 羧酸</strong></td><td><span class="highlight">濃 $H_2SO_4$</span>，回流加熱</td><td><strong>酯 (Ester) + 水</strong></td><td>酯化 / 縮合</td></tr>
+            <tr><td><strong>酯 (Ester)</strong></td><td>$NaOH(aq)$，回流加熱</td><td><strong>羧酸鹽 + 醇</strong></td><td>皂化 (Saponification) / 鹼性水解</td></tr>
+        </table>
+
+        <h2>3. 關鍵化學測試 (Chemical Tests)</h2>
+        <div class="alert-box">
+            <strong>DSE 必考：如何區分醛 (Aldehyde) 和酮 (Ketone)？</strong><br>
+            兩者均含有羰基 ($-C=O$)，因此都會與 <strong>2,4-二硝基苯肼 (2,4-DNP)</strong> 反應產生黃色/橙色沉澱。<br>
+            但只有<span class="highlight">醛具有還原性</span>。加入 <strong>多侖試劑 (Tollens' reagent)</strong> 並溫水浴加熱，<strong>醛會產生銀鏡 (Silver mirror)</strong>，而酮則無反應。
+        </div>
+
+        <h2>專業術語中英對照表</h2>
+        <table>
+            <tr><th>英文術語</th><th>中文翻譯</th><th>核心定義解釋</th></tr>
+            <tr><td>Enantiomerism</td><td>對映異構</td><td>含手性碳分子形成的不能重疊的鏡像異構體。</td></tr>
+            <tr><td>Chiral carbon</td><td>手性碳</td><td>鍵合了四個互不相同原子或基團的碳原子。</td></tr>
+            <tr><td>Heating under reflux</td><td>回流加熱</td><td>加熱混合物並讓蒸氣冷凝流回燒瓶，以防揮發物散失的技術。</td></tr>
+            <tr><td>Condensation</td><td>縮合反應</td><td>兩分子結合成大分子，並釋出細小分子（如水）的反應。</td></tr>
+            <tr><td>Saponification</td><td>皂化作用</td><td>酯在鹼性條件下的水解作用，生成醇及羧酸鹽。</td></tr>
+        </table>
+    </div>
+
+    <div class="en">
+        <h1>DSE Chemistry Notes: Topic 11 Chemistry of Carbon Compounds</h1>
+        
+        <h2>1. Stereoisomerism</h2>
+        <div class="concept-box">
+            Stereoisomers have the same molecular and structural formula but different <strong>spatial arrangements of atoms</strong>.
+            <ul>
+                <li><strong>Cis-trans isomerism</strong>: Arises from the restricted rotation of a $C=C$ double bond. The condition is that each carbon of the double bond must be attached to <strong>two different atoms or groups</strong>.</li>
+                <li><strong>Enantiomerism</strong>: Occurs when a molecule has a <span class="highlight">chiral carbon</span> (bonded to 4 completely different groups), forming non-superimposable mirror images. They have identical physical/chemical properties except they <strong>rotate plane-polarized light in opposite directions</strong>.</li>
+            </ul>
+        </div>
+
+        <h2>2. Core Synthetic Pathways</h2>
+        <table>
+            <tr><th>Reactant</th><th>Reagents & Conditions</th><th>Product</th><th>Reaction Type</th></tr>
+            <tr><td><strong>1° Alcohol</strong></td><td>$K_2Cr_2O_7 / H^+(aq)$, <span class="highlight">heat under reflux</span></td><td><strong>Carboxylic Acid</strong></td><td>Oxidation</td></tr>
+            <tr><td><strong>2° Alcohol</strong></td><td>$K_2Cr_2O_7 / H^+(aq)$, <span class="highlight">heat under reflux</span></td><td><strong>Ketone</strong></td><td>Oxidation</td></tr>
+            <tr><td><strong>Haloalkane</strong></td><td>$NaOH(aq)$, heat</td><td><strong>Alcohol</strong></td><td>Substitution</td></tr>
+            <tr><td><strong>Alcohol + Carboxylic Acid</strong></td><td><span class="highlight">Conc. $H_2SO_4$</span>, heat under reflux</td><td><strong>Ester + Water</strong></td><td>Esterification / Condensation</td></tr>
+            <tr><td><strong>Ester</strong></td><td>$NaOH(aq)$, heat under reflux</td><td><strong>Carboxylate salt + Alcohol</strong></td><td>Saponification / Alkaline hydrolysis</td></tr>
+        </table>
+
+        <h2>3. Key Chemical Tests</h2>
+        <div class="alert-box">
+            <strong>DSE Must-Know: How to distinguish Aldehydes and Ketones?</strong><br>
+            Both contain the carbonyl group ($-C=O$) and will react with <strong>2,4-DNP</strong> to give a yellow/orange precipitate.<br>
+            However, only <span class="highlight">aldehydes have reducing properties</span>. Add <strong>Tollens' reagent</strong> and warm in a water bath; <strong>aldehyde forms a silver mirror</strong>, while ketone gives no reaction.
+        </div>
+
+        <h2>Bilingual Glossary</h2>
+        <table>
+            <tr><th>English Term</th><th>Chinese Translation</th><th>Definition</th></tr>
+            <tr><td>Enantiomerism</td><td>對映異構</td><td>Non-superimposable mirror image stereoisomers arising from chiral carbons.</td></tr>
+            <tr><td>Chiral carbon</td><td>手性碳</td><td>A carbon atom bonded to four completely different atoms or groups.</td></tr>
+            <tr><td>Heating under reflux</td><td>回流加熱</td><td>Technique of heating a mixture with a condenser to prevent loss of volatile substances.</td></tr>
+            <tr><td>Condensation</td><td>縮合反應</td><td>Reaction where two molecules join to form a larger one with the loss of a small molecule (like water).</td></tr>
+            <tr><td>Saponification</td><td>皂化作用</td><td>Alkaline hydrolysis of an ester to form an alcohol and a carboxylate salt.</td></tr>
+        </table>
+    </div>
+
+</body>
+</html>

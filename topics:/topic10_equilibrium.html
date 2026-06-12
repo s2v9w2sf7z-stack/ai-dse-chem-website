@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Chemistry Notes - Topic 10: Chemical Equilibrium</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+        function toggleLanguage() {
+            var isEng = document.getElementById('lang-toggle').checked;
+            var zhElements = document.querySelectorAll('.zh');
+            var enElements = document.querySelectorAll('.en');
+            zhElements.forEach(el => el.style.display = isEng ? 'none' : 'block');
+            enElements.forEach(el => el.style.display = isEng ? 'block' : 'none');
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 850px; padding: 20px; color: #333; }
+        h1, h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
+        h3 { color: #2c3e50; margin-top: 15px; }
+        .en { display: none; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; color: #0056b3; }
+        .toggle-container { margin-bottom: 20px; padding: 15px; background: #eef5f9; display: inline-block; border-radius: 8px; border: 1px solid #b3d4ec; font-weight: bold; cursor: pointer; }
+        .highlight { font-weight: bold; color: #d9534f; }
+        .equation { background: #f9f9f9; padding: 15px; border-left: 4px solid #0056b3; margin: 10px 0; font-family: monospace; font-size: 1.2em; text-align: center; overflow-x: auto; }
+        .concept-box { background: #fdf5e6; border-left: 5px solid #f0ad4e; padding: 12px; margin: 15px 0; }
+        .alert-box { background: #feebeb; border-left: 5px solid #d9534f; padding: 12px; margin: 15px 0; }
+    </style>
+</head>
+<body onload="toggleLanguage()">
+    <div class="top-nav">
+        <div class="top-nav-container">
+            <a href="../index.html" class="back-btn">⬅ 返回課題列表</a>
+        </div>
+    </div>
+    <div class="toggle-container">
+        <label for="lang-toggle" style="cursor: pointer;">
+            <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()"> 
+            Switch to English Version (切換至英文版本)
+        </label>
+    </div>
+
+    <div class="zh">
+        <h1>DSE 化學筆記：課題十 化學平衡</h1>
+        
+        <h2>1. 動態平衡的兩大特徵</h2>
+        <div class="concept-box">
+            在一個密閉系統中，當達到動態平衡時：<br>
+            1. <span class="highlight">正向反應速率 = 逆向反應速率</span> (Rate of forward reaction = Rate of backward reaction)。<br>
+            2. 系統中所有反應物和生成物的<span class="highlight">濃度保持不變</span>。
+        </div>
+
+        <h2>2. 平衡常數 ($K_c$)</h2>
+        <p>對於反應： $aA(aq) + bB(aq) \rightleftharpoons cC(aq) + dD(aq)$</p>
+        <div class="equation">$$K_c = \frac{[C]^c[D]^d}{[A]^a[B]^b}$$</div>
+        <div class="alert-box">
+            <strong>DSE 必考陷阱：</strong><br>
+            1. 寫 $K_c$ 表達式時，純固體 $(s)$ 和純液體 $(l)$（如作為溶劑的水）的濃度<strong>不包括</strong>在內。<br>
+            2. <span class="highlight">只有溫度</span>的改變會改變 $K_c$ 的數值。濃度、壓強或加入催化劑都不會改變 $K_c$。
+        </div>
+
+        <h2>3. 勒沙得利爾原理 (Le Chatelier's Principle)</h2>
+        <p>當系統受到改變時，平衡位置會移動以<span class="highlight">抵消該改變 (oppose the change)</span>。</p>
+        <table>
+            <tr><th>干擾因素</th><th>系統反應 (平衡移動方向)</th></tr>
+            <tr><td>增加反應物濃度</td><td>向<strong>右</strong>移動（以消耗反應物）。</td></tr>
+            <tr><td>增加壓強（減小體積）</td><td>向<strong>氣體分子總數較少</strong>的一方移動。</td></tr>
+            <tr><td>升高溫度</td><td>向<strong>吸熱反應 (Endothermic, $\Delta H > 0$)</strong> 的方向移動。</td></tr>
+            <tr><td>加入催化劑</td><td><strong>不移動</strong>。（只會令系統更快達到平衡）</td></tr>
+        </table>
+
+        <h2>4. 哈柏法 (Haber Process) 製氨</h2>
+        <p>反應： $N_2(g) + 3H_2(g) \rightleftharpoons 2NH_3(g) \quad \Delta H = -92 \, kJ \, mol^{-1}$</p>
+        <p>由於這是一個正向為<strong>放熱</strong>、且正向<strong>氣體分子數目減少</strong>的反應。理論上低溫高壓能獲得最高產量。但為了平衡<strong>反應速率</strong>及<strong>生產成本</strong>，工業上採用：<span class="highlight">400-500°C、200 大氣壓、鐵催化劑</span>的折衷條件。</p>
+
+        <h2>專業術語中英對照表</h2>
+        <table>
+            <tr><th>英文術語</th><th>中文翻譯</th><th>核心定義解釋</th></tr>
+            <tr><td>Dynamic equilibrium</td><td>動態平衡</td><td>正逆反應速率相等，各物質濃度不變的狀態。</td></tr>
+            <tr><td>Le Chatelier's principle</td><td>勒沙得利爾原理</td><td>系統平衡受干擾時，會向抵消該干擾的方向移動。</td></tr>
+            <tr><td>Equilibrium constant ($K_c$)</td><td>平衡常數</td><td>平衡時生成物與反應物濃度乘積的比值。</td></tr>
+            <tr><td>Closed system</td><td>密閉系統</td><td>不能與外界交換物質的系統。</td></tr>
+        </table>
+    </div>
+
+    <div class="en">
+        <h1>DSE Chemistry Notes: Topic 10 Chemical Equilibrium</h1>
+        
+        <h2>1. Two Characteristics of Dynamic Equilibrium</h2>
+        <div class="concept-box">
+            In a closed system, when dynamic equilibrium is reached:<br>
+            1. <span class="highlight">Rate of forward reaction = Rate of backward reaction</span>.<br>
+            2. The <span class="highlight">concentrations</span> of all reactants and products <span class="highlight">remain constant</span>.
+        </div>
+
+        <h2>2. Equilibrium Constant ($K_c$)</h2>
+        <p>For the reaction: $aA(aq) + bB(aq) \rightleftharpoons cC(aq) + dD(aq)$</p>
+        <div class="equation">$$K_c = \frac{[C]^c[D]^d}{[A]^a[B]^b}$$</div>
+        <div class="alert-box">
+            <strong>DSE Traps:</strong><br>
+            1. Concentrations of pure solids $(s)$ and pure liquids $(l)$ (e.g., water as a solvent) are <strong>not included</strong> in the $K_c$ expression.<br>
+            2. <span class="highlight">ONLY Temperature</span> can change the value of $K_c$. Changes in concentration, pressure, or adding a catalyst do NOT change $K_c$.
+        </div>
+
+        <h2>3. Le Chatelier's Principle</h2>
+        <p>When a system at equilibrium is subjected to a change, the equilibrium position shifts to <span class="highlight">oppose the change</span>.</p>
+        <table>
+            <tr><th>Disturbance</th><th>System's Response (Direction of Shift)</th></tr>
+            <tr><td>Increase concentration of reactant</td><td>Shifts to the <strong>right</strong> (to consume the reactant).</td></tr>
+            <tr><td>Increase pressure (Decrease volume)</td><td>Shifts to the side with <strong>fewer moles of gas molecules</strong>.</td></tr>
+            <tr><td>Increase temperature</td><td>Shifts to the <strong>endothermic direction ($\Delta H > 0$)</strong>.</td></tr>
+            <tr><td>Add a catalyst</td><td><strong>No shift</strong>. (Only helps reach equilibrium faster).</td></tr>
+        </table>
+
+        <h2>4. Haber Process (Production of Ammonia)</h2>
+        <p>Reaction: $N_2(g) + 3H_2(g) \rightleftharpoons 2NH_3(g) \quad \Delta H = -92 \, kJ \, mol^{-1}$</p>
+        <p>Since the forward reaction is <strong>exothermic</strong> and proceeds with a <strong>decrease in gas molecules</strong>, low temperature and high pressure theoretically give the maximum yield. However, considering <strong>reaction rate</strong> and <strong>cost</strong>, industry uses compromise conditions: <span class="highlight">400-500°C, 200 atm, and an Iron catalyst</span>.</p>
+
+        <h2>Bilingual Glossary</h2>
+        <table>
+            <tr><th>English Term</th><th>Chinese Translation</th><th>Definition</th></tr>
+            <tr><td>Dynamic equilibrium</td><td>動態平衡</td><td>State where forward and backward rates are equal, and concentrations remain constant.</td></tr>
+            <tr><td>Le Chatelier's principle</td><td>勒沙得利爾原理</td><td>When a system is disturbed, it shifts to oppose the disturbance.</td></tr>
+            <tr><td>Equilibrium constant ($K_c$)</td><td>平衡常數</td><td>Ratio of product of product concentrations to reactant concentrations at equilibrium.</td></tr>
+            <tr><td>Closed system</td><td>密閉系統</td><td>A system that cannot exchange matter with its surroundings.</td></tr>
+        </table>
+    </div>
+
+</body>
+</html>

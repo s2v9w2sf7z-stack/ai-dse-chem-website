@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Chemistry Notes - Topic 12: Patterns in the Chemical World</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+        function toggleLanguage() {
+            var isEng = document.getElementById('lang-toggle').checked;
+            var zhElements = document.querySelectorAll('.zh');
+            var enElements = document.querySelectorAll('.en');
+            zhElements.forEach(el => el.style.display = isEng ? 'none' : 'block');
+            enElements.forEach(el => el.style.display = isEng ? 'block' : 'none');
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 880px; padding: 20px; color: #333; }
+        h1, h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
+        h3 { color: #2c3e50; margin-top: 15px; }
+        .en { display: none; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; color: #0056b3; }
+        .toggle-container { margin-bottom: 20px; padding: 15px; background: #eef5f9; display: inline-block; border-radius: 8px; border: 1px solid #b3d4ec; font-weight: bold; cursor: pointer; }
+        .highlight { font-weight: bold; color: #d9534f; }
+        .equation { background: #f9f9f9; padding: 15px; border-left: 4px solid #0056b3; margin: 10px 0; font-family: monospace; font-size: 1.1em; overflow-x: auto; }
+        .concept-box { background: #e8f4f8; border-left: 5px solid #5bc0de; padding: 12px; margin: 15px 0; }
+        .alert-box { background: #feebeb; border-left: 5px solid #d9534f; padding: 12px; margin: 15px 0; }
+        .transition-box { background: #fdf5e6; border-left: 5px solid #f0ad4e; padding: 12px; margin: 15px 0; }
+    </style>
+</head>
+<body onload="toggleLanguage()">
+    <div class="top-nav">
+        <div class="top-nav-container">
+            <a href="../index.html" class="back-btn">⬅ 返回課題列表</a>
+        </div>
+    </div>
+    <div class="toggle-container">
+        <label for="lang-toggle" style="cursor: pointer;">
+            <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()"> 
+            Switch to English Version (切換至英文版本)
+        </label>
+    </div>
+
+    <div class="zh">
+        <h1>DSE 化學筆記：課題十二 化學世界中的規律</h1>
+        
+        <h2>1. 第三週期元素的熔點變化 (Melting Point Trend)</h2>
+        <p>熔點變化完全取決於元素的<strong>結構與鍵合</strong>：</p>
+        <table>
+            <tr><th>元素</th><th>結構 (Structure)</th><th>熔點高低與原因</th></tr>
+            <tr><td><strong>$Na, Mg, Al$</strong></td><td>巨型金屬結構</td><td>高。須克服金屬陽離子與離域電子間的強大<span class="highlight">金屬鍵</span>。</td></tr>
+            <tr><td><strong>$Si$ (硅)</strong></td><td>巨型共價結構</td><td><strong>極高（最高點）</strong>。須克服原子間大量的強大<span class="highlight">共價鍵</span>。</td></tr>
+            <tr><td><strong>$P, S, Cl$</strong></td><td>簡單分子結構</td><td>低。只需克服分子間微弱的<span class="highlight">范德華力</span>。</td></tr>
+        </table>
+        <div class="alert-box">
+            <strong>DSE 必考陷阱：比較 P, S, Cl 的熔點</strong><br>
+            這三者的真實分子形態為：$P_4$、$S_8$、$Cl_2$。分子大小（電子數量）的順序為：<span class="highlight">$S_8 > P_4 > Cl_2$</span>。分子越大，范德華力越強，因此熔點順序為：<strong>$S > P > Cl$</strong>。
+        </div>
+
+        <h2>2. 第三週期氧化物的酸鹼性</h2>
+        <p>隨着原子序增加，氧化物由鹼性過渡到酸性：</p>
+        <ul>
+            <li><strong>鹼性 (Basic)</strong>：$Na_2O, MgO$（能與酸反應）。</li>
+            <li><strong>兩性 (Amphoteric)</strong>：<span class="highlight">$Al_2O_3$</span>（既與酸反應，也與鹼反應）。</li>
+            <li><strong>酸性 (Acidic)</strong>：$SiO_2, P_4O_{10}, SO_2, SO_3, Cl_2O$（能與鹼反應）。</li>
+        </ul>
+
+        <h2>3. 過渡金屬的一般性質 (Transition Metals)</h2>
+        <div class="transition-box">
+            過渡金屬（如鐵 $Fe$、銅 $Cu$、錳 $Mn$）除了擁有高熔點和高密度的物理性質外，還具備以下四大獨特化學性質（主族金屬通常不具備）：
+            <ol>
+                <li><strong>具有可變的氧化態 (Variable oxidation states)</strong>：例如鐵有 +2 ($Fe^{2+}$) 和 +3 ($Fe^{3+}$)；因為它們的 3d 和 4s 電子層能量相近。</li>
+                <li><strong>形成有色離子 (Coloured ions)</strong>：過渡金屬的化合物多帶有顏色。例如 $Cu^{2+}(aq)$ 呈藍色，$MnO_4^-(aq)$ 呈紫色。</li>
+                <li><strong>展現催化性質 (Catalytic properties)</strong>：過渡金屬及其化合物是優良的催化劑。例如哈柏法使用<span class="highlight">鐵 ($Fe$)</span>，分解雙氧水使用<span class="highlight">二氧化錳 ($MnO_2$)</span>。</li>
+                <li><strong>形成錯離子 (Complex formation)</strong>：金屬陽離子能與配位體（如水分子或氨分子）結合形成錯合物，如 $[Cu(H_2O)_6]^{2+}$。</li>
+            </ol>
+        </div>
+
+        <h2>專業術語中英對照表</h2>
+        <table>
+            <tr><th>英文術語</th><th>中文翻譯</th><th>核心定義解釋</th></tr>
+            <tr><td>Periodicity</td><td>週期性</td><td>元素的性質隨着原子序數的增加而呈現有規律的變化。</td></tr>
+            <tr><td>Amphoteric oxide</td><td>兩性氧化物</td><td>既能與酸反應，又能與鹼反應的氧化物（如 $Al_2O_3$）。</td></tr>
+            <tr><td>Variable oxidation states</td><td>可變氧化態</td><td>過渡金屬能失去不同數目的電子以形成多種穩定的離子。</td></tr>
+            <tr><td>Complex ion</td><td>錯離子</td><td>由中心金屬離子與多個配位體（如水、氨）結合而成的離子。</td></tr>
+        </table>
+    </div>
+
+    <div class="en">
+        <h1>DSE Chemistry Notes: Topic 12 Patterns in the Chemical World</h1>
+        
+        <h2>1. Trend in Melting Points of Period 3 Elements</h2>
+        <p>The variation in melting points depends entirely on the <strong>structure and bonding</strong>:</p>
+        <table>
+            <tr><th>Elements</th><th>Structure</th><th>Melting Point & Reason</th></tr>
+            <tr><td><strong>$Na, Mg, Al$</strong></td><td>Giant metallic structure</td><td>High. Needs to overcome strong <span class="highlight">metallic bonds</span>.</td></tr>
+            <tr><td><strong>$Si$ (Silicon)</strong></td><td>Giant covalent structure</td><td><strong>Very high (Peak)</strong>. Needs to break numerous strong <span class="highlight">covalent bonds</span>.</td></tr>
+            <tr><td><strong>$P, S, Cl$</strong></td><td>Simple molecular structure</td><td>Low. Needs to overcome only weak <span class="highlight">Van der Waals' forces</span>.</td></tr>
+        </table>
+        <div class="alert-box">
+            <strong>DSE Trap: Comparing melting points of P, S, Cl</strong><br>
+            Their actual molecular forms are: $P_4$, $S_8$, $Cl_2$. The order of molecular size is: <span class="highlight">$S_8 > P_4 > Cl_2$</span>. Larger molecules have stronger Van der Waals' forces, so the melting point order is: <strong>$S > P > Cl$</strong>.
+        </div>
+
+        <h2>2. Acid-base Nature of Period 3 Oxides</h2>
+        <p>Across the period, oxides change from basic to acidic:</p>
+        <ul>
+            <li><strong>Basic</strong>: $Na_2O, MgO$ (React with acids).</li>
+            <li><strong>Amphoteric</strong>: <span class="highlight">$Al_2O_3$</span> (Reacts with BOTH acids and alkalis).</li>
+            <li><strong>Acidic</strong>: $SiO_2, P_4O_{10}, SO_2, SO_3, Cl_2O$ (React with alkalis).</li>
+        </ul>
+
+        <h2>3. General Properties of Transition Metals</h2>
+        <div class="transition-box">
+            Transition metals (e.g., $Fe, Cu, Mn$) have high melting points and densities. Compared to main group metals, they exhibit four unique chemical properties:
+            <ol>
+                <li><strong>Variable oxidation states</strong>: e.g., Iron forms +2 ($Fe^{2+}$) and +3 ($Fe^{3+}$) because their 3d and 4s subshells are close in energy.</li>
+                <li><strong>Coloured ions</strong>: Compounds are often coloured in solid state or aqueous solution. E.g., $Cu^{2+}(aq)$ is blue, $MnO_4^-(aq)$ is purple.</li>
+                <li><strong>Catalytic properties</strong>: Widely used as catalysts. E.g., <span class="highlight">Iron ($Fe$)</span> in the Haber process; <span class="highlight">Manganese(IV) oxide ($MnO_2$)</span> in the decomposition of $H_2O_2$.</li>
+                <li><strong>Complex formation</strong>: Metal cations can bond with ligands (e.g., $H_2O, NH_3$) to form complex ions, such as $[Cu(H_2O)_6]^{2+}$.</li>
+            </ol>
+        </div>
+
+        <h2>Bilingual Glossary</h2>
+        <table>
+            <tr><th>English Term</th><th>Chinese Translation</th><th>Definition</th></tr>
+            <tr><td>Periodicity</td><td>週期性</td><td>The regular recurrence of properties with increasing atomic number.</td></tr>
+            <tr><td>Amphoteric oxide</td><td>兩性氧化物</td><td>An oxide that can react with both acids and alkalis (e.g., $Al_2O_3$).</td></tr>
+            <tr><td>Variable oxidation states</td><td>可變氧化態</td><td>The ability of transition metals to form ions with different charges.</td></tr>
+            <tr><td>Complex ion</td><td>錯離子</td><td>An ion comprising a central metal ion bonded to one or more ligands.</td></tr>
+        </table>
+    </div>
+
+</body>
+</html>

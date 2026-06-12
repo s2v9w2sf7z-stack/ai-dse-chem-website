@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Chemistry Notes - Topic 5: Fossil Fuels and Carbon Compounds</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+        function toggleLanguage() {
+            var isEng = document.getElementById('lang-toggle').checked;
+            var zhElements = document.querySelectorAll('.zh');
+            var enElements = document.querySelectorAll('.en');
+            zhElements.forEach(el => el.style.display = isEng ? 'none' : 'block');
+            enElements.forEach(el => el.style.display = isEng ? 'block' : 'none');
+        }
+    </script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 850px; padding: 20px; color: #333; }
+        h1, h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
+        h3 { color: #2c3e50; margin-top: 15px; }
+        .en { display: none; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; color: #0056b3; }
+        .toggle-container { margin-bottom: 20px; padding: 15px; background: #eef5f9; display: inline-block; border-radius: 8px; border: 1px solid #b3d4ec; font-weight: bold; cursor: pointer; }
+        .highlight { font-weight: bold; color: #d9534f; }
+        .equation { background: #f9f9f9; padding: 10px; border-left: 4px solid #0056b3; margin: 10px 0; font-family: monospace; }
+        .concept-box { background: #fff8e1; border-left: 5px solid #ffb300; padding: 12px; margin: 15px 0; }
+    </style>
+</head>
+<body onload="toggleLanguage()">
+    <div class="top-nav">
+        <div class="top-nav-container">
+            <a href="../index.html" class="back-btn">⬅ 返回課題列表</a>
+        </div>
+    </div>
+    <div class="toggle-container">
+        <label for="lang-toggle" style="cursor: pointer;">
+            <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()"> 
+            Switch to English Version (切換至英文版本)
+        </label>
+    </div>
+
+    <div class="zh">
+        <h1>DSE 化學筆記：課題五 化石燃料和碳化合物</h1>
+        
+        <h2>1. 石油分餾與物理性質</h2>
+        <p>石油的<span class="highlight">分餾 (Fractional distillation)</span> 是物理變化。隨著碳原子數目（分子大小）增加，分子間的<span class="highlight">范德華力</span>增強，導致：</p>
+        <ul>
+            <li><strong>沸點 (Boiling point)</strong> 上升。</li>
+            <li><strong>黏度 (Viscosity)</strong> 增加（流動性降低）。</li>
+            <li><strong>易燃性 (Flammability)</strong> 降低，且燃燒時產生更多黑煙。</li>
+        </ul>
+
+        <h2>2. 烷烴與烯烴 (Alkanes vs Alkenes)</h2>
+        <div class="concept-box">
+            <strong>核心區別：</strong><br>
+            <strong>烷烴</strong>是飽和的，只含 $C-C$ 單鍵；<strong>烯烴</strong>是不飽和的，含有最少一個 $C=C$ 雙鍵。雙鍵是烯烴的<strong>官能基 (Functional group)</strong>。
+        </div>
+
+        <h3>核心化學反應對比：</h3>
+        <table>
+            <tr><th>反應類型</th><th>烷烴 (Alkanes)</th><th>烯烴 (Alkenes)</th></tr>
+            <tr>
+                <td><strong>與鹵素反應</strong></td>
+                <td><span class="highlight">取代反應 (Substitution)</span><br>必須在<strong>紫外光 (UV)</strong> 下進行。反應較慢。<br> $CH_4 + Cl_2 \xrightarrow{UV} CH_3Cl + HCl$</td>
+                <td><span class="highlight">加成反應 (Addition)</span><br>在黑暗中（室溫）亦能迅速進行。<br> $C_2H_4 + Br_2 \rightarrow C_2H_4Br_2$</td>
+            </tr>
+            <tr>
+                <td><strong>測試方法</strong></td>
+                <td>加入溴水並置於黑暗中，<strong>無可見變化</strong>（保持橙色）。</td>
+                <td>加入溴水，橙色溶液會<span class="highlight">迅速褪色 (decolorizes rapidly)</span>。</td>
+            </tr>
+        </table>
+
+        <h2>3. 塑膠與聚合作用 (Plastics & Polymerisation)</h2>
+        <p>透過<span class="highlight">加成聚合作用</span>，烯烴分子（單體）中的 $C=C$ 雙鍵斷裂，互相連結形成只含 $C-C$ 單鍵的長鏈聚合物。例如，乙烯 ($n \, C_2H_4$) 聚合成聚乙烯 ($-[-CH_2-CH_2-]-_n$)。</p>
+
+        <h2>專業術語中英對照表</h2>
+        <table>
+            <tr><th>英文術語</th><th>中文翻譯</th><th>核心定義解釋</th></tr>
+            <tr><td>Homologous series</td><td>同系列</td><td>具相同通式和相近化學性質的系列。</td></tr>
+            <tr><td>Hydrocarbon</td><td>碳氫化合物</td><td>只含碳和氫兩種原子的化合物。</td></tr>
+            <tr><td>Substitution reaction</td><td>取代反應</td><td>分子中的原子被其他原子或原子團替換。</td></tr>
+            <tr><td>Addition reaction</td><td>加成反應</td><td>不飽和分子雙鍵斷裂，與其他原子結合形成大分子的反應。</td></tr>
+        </table>
+    </div>
+
+    <div class="en">
+        <h1>DSE Chemistry Notes: Topic 5 Fossil Fuels and Carbon Compounds</h1>
+        
+        <h2>1. Fractional Distillation of Petroleum</h2>
+        <p><span class="highlight">Fractional distillation</span> of petroleum is a physical process. As the number of carbon atoms (molecular size) increases, the <span class="highlight">Van der Waals' forces</span> between molecules become stronger, resulting in:</p>
+        <ul>
+            <li>Higher <strong>boiling points</strong>.</li>
+            <li>Higher <strong>viscosity</strong> (less flowable).</li>
+            <li>Lower <strong>flammability</strong> and more sooty flame upon combustion.</li>
+        </ul>
+
+        <h2>2. Alkanes vs Alkenes</h2>
+        <div class="concept-box">
+            <strong>Core Differences:</strong><br>
+            <strong>Alkanes</strong> are saturated and contain only $C-C$ single bonds. <strong>Alkenes</strong> are unsaturated and contain at least one $C=C$ double bond, which acts as their <strong>functional group</strong>.
+        </div>
+
+        <h3>Comparison of Key Reactions:</h3>
+        <table>
+            <tr><th>Reaction Type</th><th>Alkanes</th><th>Alkenes</th></tr>
+            <tr>
+                <td><strong>Reaction with Halogens</strong></td>
+                <td><span class="highlight">Substitution reaction</span><br>Requires <strong>UV light</strong>. Reaction is generally slow.<br> $CH_4 + Cl_2 \xrightarrow{UV} CH_3Cl + HCl$</td>
+                <td><span class="highlight">Addition reaction</span><br>Occurs rapidly even in the dark (at room temp).<br> $C_2H_4 + Br_2 \rightarrow C_2H_4Br_2$</td>
+            </tr>
+            <tr>
+                <td><strong>Chemical Test</strong></td>
+                <td>Add bromine water in the dark; <strong>no observable change</strong> (remains orange).</td>
+                <td>Add bromine water; the orange solution <span class="highlight">decolorizes rapidly</span>.</td>
+            </tr>
+        </table>
+
+        <h2>3. Plastics & Polymerisation</h2>
+        <p>Through <span class="highlight">addition polymerisation</span>, the $C=C$ double bonds in alkene molecules (monomers) break and join together to form a long-chain polymer containing only $C-C$ single bonds. For example, ethene ($n \, C_2H_4$) polymerizes into polyethene ($-[-CH_2-CH_2-]-_n$).</p>
+
+        <h2>Bilingual Glossary</h2>
+        <table>
+            <tr><th>English Term</th><th>Chinese Translation</th><th>Definition</th></tr>
+            <tr><td>Homologous series</td><td>同系列</td><td>A series of organic compounds with the same general formula and similar chemical properties.</td></tr>
+            <tr><td>Hydrocarbon</td><td>碳氫化合物</td><td>Compounds containing ONLY carbon and hydrogen atoms.</td></tr>
+            <tr><td>Substitution reaction</td><td>取代反應</td><td>A reaction in which atom(s) in a molecule are replaced by other atom(s) or groups.</td></tr>
+            <tr><td>Addition reaction</td><td>加成反應</td><td>A reaction where two or more molecules combine to form a single larger molecule (typically involves breaking of a double bond).</td></tr>
+        </table>
+    </div>
+
+</body>
+</html>
