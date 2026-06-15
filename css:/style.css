@@ -180,3 +180,49 @@ p {
         padding: 20px;
     }
 }
+/* ==========================================
+   點擊顯示答案專用樣式
+   ========================================== */
+.quiz-item details {
+    margin-top: 10px;
+    background-color: #f0f4f8;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.quiz-item summary {
+    padding: 10px 15px;
+    color: #005b96;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none; /* 隱藏 Mac/Safari 預設箭頭 */
+    display: flex;
+    align-items: center;
+}
+
+/* 為了相容不同瀏覽器隱藏預設箭頭 */
+.quiz-item summary::-webkit-details-marker {
+    display: none;
+}
+
+/* 自己加上一個更有質感的圖標 */
+.quiz-item summary::before {
+    content: "💡";
+    margin-right: 8px;
+    transition: transform 0.2s;
+}
+
+/*當展開時，讓提示圖標有一點小變化 */
+.quiz-item details[open] summary::before {
+    content: "🔓";
+}
+
+/* 展開後的答案內文樣式 */
+.quiz-answer {
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #d1e1f0;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    color: #2e7d32; /* 答案用沉穩的綠色顯示 */
+}
